@@ -13,7 +13,8 @@ math_set_epsilon(0);
 
 
 
-if instance_exists(a_Player){	
+if false{
+	//instance_exists(a_Player){	
 	if a_Player.x<70{
 		camera_set_view_target(view_camera[0], noone);
 		camera_set_view_pos(view_camera[0],a_Player.x-70,433)
