@@ -42,6 +42,7 @@
   "resources":[
     {"id":{"name":"bkgnd","path":"objects/bkgnd/bkgnd.yy",},},
     {"id":{"name":"obj_joystick0","path":"objects/obj_joystick0/obj_joystick0.yy",},},
+    {"id":{"name":"obj_multitouch_manager0","path":"objects/obj_multitouch_manager0/obj_multitouch_manager0.yy",},},
     {"id":{"name":"obj_ui_parent0","path":"objects/obj_ui_parent0/obj_ui_parent0.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Grass_Running","path":"sounds/Grass_Running/Grass_Running.yy",},},
