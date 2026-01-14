@@ -108,6 +108,7 @@
     {"id":{"name":"Object3","path":"objects/Object3/Object3.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Script1","path":"scripts/Script1/Script1.yy",},},
+    {"id":{"name":"unused","path":"scripts/unused/unused.yy",},},
     {"id":{"name":"Grass_Running","path":"sounds/Grass_Running/Grass_Running.yy",},},
     {"id":{"name":"Blacka___menu","path":"sprites/Blacka___menu/Blacka___menu.yy",},},
     {"id":{"name":"Layer_0000_9","path":"sprites/Layer_0000_9/Layer_0000_9.yy",},},
