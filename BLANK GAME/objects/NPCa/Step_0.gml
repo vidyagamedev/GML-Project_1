@@ -1,11 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.chkk1=true
-{
-	chck1=true
-}
-else chck1=false
-
+if global.chkk1=true{chck1=true}else chck1=false
 if instance_exists(a_Player){
 //&&spawn.enemycheck>=0
 	if false{
@@ -40,11 +35,28 @@ if false{
 	}
 else {_space = false}
 
-if cos(degtorad(direction)) >0.1{_right=true;_move_x=1
-	_left=false;}
-else if cos(degtorad(direction)) <-0.1{_left=true;_move_x=-1
-	_right=false;}
+
+
+
+
+
+
+
+
+if cos(degtorad(direction)) >0.1
+{
+	_right=true;
+	_move_x=1;
+	_left=false;
+}
+else if cos(degtorad(direction)) <-0.1
+{
+	_left=true;
+	_move_x=-1
+	_right=false;
+}
 else{_left=false;
 	_right=false;}
+
 // Inherit the parent event
 event_inherited();
