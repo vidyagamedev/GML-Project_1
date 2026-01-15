@@ -5,7 +5,7 @@ function unused(){
 }
 
 
-if false{}
+if false{
 
 
 
@@ -289,4 +289,4 @@ event_inherited();
 //NPCe
 
 
-//}
+}

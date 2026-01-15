@@ -4,6 +4,8 @@ if global.chkk1=true{chck1=true}else chck1=false//if player character is jumping
 
 if instance_exists(a_Player){
 	if !atak{//if NOT in atack behaviour... 
+
+
 		if !chck1
 		{//if player character is NOT! jumping, then... if NOT too close to player, then move to player... else, don't move
 			if collision_rectangle(x-5 +myd*15-10, y + -200, x-5+myd*15-2, y + 200, a_Player, true, 1) =noone
