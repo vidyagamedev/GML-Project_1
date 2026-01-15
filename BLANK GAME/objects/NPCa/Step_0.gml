@@ -20,8 +20,7 @@ if instance_exists(a_Player){
 	}
 }
 
-//if ( collision_rectangle(x + -20, y + -20, x + 20, y + 20, NPCe, true, 1) ) !=noone {//IF ENEMY DETECTED IN RECTANGLE, THEN ATTACK. 
-if false{
+if false{//if ( collision_rectangle(x + -20, y + -20, x + 20, y + 20, NPCe, true, 1) ) !=noone {//IF ENEMY DETECTED IN RECTANGLE, THEN ATTACK. 
 	_space = true
 	atak=true;
 	direction = point_direction(x, y, NPCe.x, NPCe.y);
