@@ -1,56 +1,37 @@
 /// @description Insert description here
 // You can write your code in this editor
-if global.chkk1=true{chck1=true}else chck1=false
+if global.chkk1=true{chck1=true}else chck1=false//if player character is jumping or not
+
 if instance_exists(a_Player){
-//&&spawn.enemycheck>=0
-	if false{
-		//!atak{
-		if ( collision_rectangle(x + -200, y + -200, x + 500, y + 200, NPCe, true, 1) ) !=noone
-		{//find and attack enemy
-			direction = point_direction(x, y, NPCe.x, NPCe.y);
-		}
-		else if !chck1
-		{//move to position beside player
+	if !atak{//if NOT in atack behaviour... 
+		if !chck1
+		{//if player character is NOT! jumping, then... if NOT too close to player, then move to player... else, don't move
 			if collision_rectangle(x-5 +myd*15-10, y + -200, x-5+myd*15-2, y + 200, a_Player, true, 1) =noone
-			{
-				direction = point_direction(x, y, a_Player.x+5-myd*15, a_Player.y)
-			}
+			{direction = point_direction(x, y, a_Player.x+5-myd*15, a_Player.y)}
 			else direction=90
 		}
 	}
-	else //if atak. walk back to player
-	{
+	else {//else.... if atak. walk back to player
 		direction = point_direction(x, y, a_Player.x, a_Player.y)
-		if ( collision_rectangle(x + -20, y + -20, x + 20, y + 20, a_Player, true, 1) ) !=noone {
-		atak=false
-		}
+		if ( collision_rectangle(x + -20, y + -20, x + 20, y + 20, a_Player, true, 1) ) !=noone
+		{atak=false}
 	}
 }
-		
 
+//if ( collision_rectangle(x + -20, y + -20, x + 20, y + 20, NPCe, true, 1) ) !=noone {//IF ENEMY DETECTED IN RECTANGLE, THEN ATTACK. 
 if false{
-	//( collision_rectangle(x + -20, y + -20, x + 20, y + 20, NPCe, true, 1) ) !=noone {_space = true
+	_space = true
 	atak=true;
 	direction = point_direction(x, y, NPCe.x, NPCe.y);
-	}
+}
 else {_space = false}
 
-
-
-
-
-
-
-
-
-if cos(degtorad(direction)) >0.1
-{
+if cos(degtorad(direction)) >0.1{
 	_right=true;
 	_move_x=1;
 	_left=false;
 }
-else if cos(degtorad(direction)) <-0.1
-{
+else if cos(degtorad(direction)) <-0.1{
 	_left=true;
 	_move_x=-1
 	_right=false;
