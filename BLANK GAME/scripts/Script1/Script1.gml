@@ -12,40 +12,26 @@ spawnplayer = function()//create room code would make more sense for this.
 }
 
 function spawnplayer (){
-//player selection
-dudes = array_length(global.characters)	
-		var rndmi =irandom_range(1, dudes);
-	if rndmi >= 1 && rndmi <= dudes then {instance_create_layer(-5, 490,"Instances",a_Player,{sprite_index: global.characters[rndmi-1][3][0],bodyid:rndmi});}
-	//else if rndmi = 4 {instance_create_layer(-5, 490,"Instances",a_Player,{sprite_index: MWIdle,bodyid:4});}
-	//else if rndmi = 5 {instance_create_layer(-5, 490,"Instances",a_Player,{sprite_index: HKIdle,bodyid:5});}
-	//else if rndmi = 6 {instance_create_layer(-5, 490,"Instances",a_Player,{sprite_index: FWIdle,bodyid:6});}
-	//else if rndmi = 7 {rndmi=-1
-	//	instance_create_layer(5, 490,"Instances",a_Player,{sprite_index: EWIdle,bodyid:-1});}
-	//else if rndmi = 8 {rndmi=-2
-	//	instance_create_layer(5, 490, "Instances",a_Player,{sprite_index: NBAttack15,bodyid:-2,_up : false,upp: false});}
-	//else if rndmi = 9{//rndmi=0
-	//	instance_create_layer(5, 490, "Instances",a_Player,{sprite_index: PIdle,bodyid:-3,_up : false,upp: false});}
-	//else if rndmi = 10 {//rndmi=0
-	//	instance_create_layer(5, 490, "Instances",a_Player,{sprite_index: BAIdle,bodyid:-4,_up : false,upp: false});}
-
+	dudes = array_length(global.characters)
+	var rndmi =irandom_range(1, dudes);
+	if rndmi >= 1 && rndmi <= dudes {
+		instance_create_layer(-5, 490,"Instances",a_Player,
+		{sprite_index: global.characters[rndmi-1][3][0],
+			bodyid:rndmi})
+	}
 	var _i =0
-	repeat(dudes){
+	repeat(dudes)
+	{
 		_i +=1
 		if rndmi !=_i {
-			instance_create_layer
-			(353-55*_i, 690,"Instances",NPCa,
+			instance_create_layer(353-55*_i, 690,"Instances",NPCa,
 			{
 				sprite_index: global.characters[_i-1][3][0],
 				bodyid:_i
 			})
 		}
 	}
-	//if rndmi !=4 {instance_create_layer(133, 690,"Instances",NPCa,{sprite_index: MWIdle,bodyid:4})}
-	//if rndmi !=5 {instance_create_layer(92, 690,"Instances",NPCa,{sprite_index: HKIdle,bodyid:5})}
-	//if rndmi !=6 {instance_create_layer(32, 690,"Instances",NPCa,{sprite_index: FWIdle,bodyid:6})}
-
-global.mainplayer = rndmi
-	//instance_create_layer(250,250,"Instances",NPCa,{sprite_index: RHJump2,bodyid:3});
+	global.mainplayer = rndmi
 }
 
 

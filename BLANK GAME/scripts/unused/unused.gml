@@ -1,5 +1,14 @@
 
 if false{
+	
+	for (var i = 0;		// Start at 0
+		i < max_items;	// Stop at the limit
+		i += 1)			// Move by 1
+	{
+		// Your code here
+	}	
+	
+	
 if global.chkk1=true{chck1=true}else chck1=false//if player character is jumping or not
 
 if instance_exists(a_Player)&&spawn.enemycheck>=0{
