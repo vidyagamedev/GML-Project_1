@@ -1,36 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-function Script1(){
-
-}
-
-spawnplayer = function()//create room code would make more sense for this.
-					//but also, the function is only caleld, also only at the start. only once per game, per reset
-{
-
-}
-
-function spawnplayer (){
-	dudes = array_length(global.characters)
-	var rndmi =irandom_range(1, dudes);
-	if rndmi >= 1 && rndmi <= dudes {
-		instance_create_layer(-5, 490,"Instances",a_Player,
-		{sprite_index: global.characters[rndmi-1][3][0],
-			bodyid:rndmi})
-	}
-	for (var _i = 1; _i <= dudes; _i += 1){
-		if rndmi !=_i {
-			instance_create_layer(353-55*_i, 690,"Instances",NPCa,
-			{sprite_index: global.characters[_i-1][3][0],
-				bodyid:_i})
-		}
-	}
-	global.mainplayer = rndmi
-}
-
-
-
 #region file explorer function!
 /// @description	this function returns an array with file/folder names
 /// 
@@ -47,9 +17,6 @@ function folder_finder(_directory,_fle=fa_directory){
 		_file_name = file_find_next()}
 	file_find_close();return _files
 }
-
-
-
 function full_import(_directory){
 	//var _directory	= working_directory+"duude/file/"
 	 //var _INCLUDEDFILES="duude/file/" 		//	"actors/"
@@ -111,7 +78,23 @@ function full_import(_directory){
 	epicimport(_directory)
 	return filez
 }
-
+function spawnplayer (){
+	dudes = array_length(global.characters)
+	var rndmi =irandom_range(1, dudes);
+	if rndmi >= 1 && rndmi <= dudes {
+		instance_create_layer(-5, 490,"Instances",a_Player,
+		{sprite_index: global.characters[rndmi-1][3][0],
+			bodyid:rndmi})
+	}
+	for (var _i = 1; _i <= dudes; _i += 1){
+		if rndmi !=_i {
+			instance_create_layer(353-55*_i, 690,"Instances",NPCa,
+			{sprite_index: global.characters[_i-1][3][0],
+				bodyid:_i})
+		}
+	}
+	global.mainplayer = rndmi
+}
 
 function grassS(){
 	audio_stop_sound(Grass_Running)
