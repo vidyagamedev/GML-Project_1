@@ -19,14 +19,11 @@ function spawnplayer (){
 		{sprite_index: global.characters[rndmi-1][3][0],
 			bodyid:rndmi})
 	}
-	for (var _i = 0; _i < dudes; _i += 1)
-	{
+	for (var _i = 1; _i <= dudes; _i += 1){
 		if rndmi !=_i {
 			instance_create_layer(353-55*_i, 690,"Instances",NPCa,
-			{
-				sprite_index: global.characters[_i-1][3][0],
-				bodyid:_i
-			})
+			{sprite_index: global.characters[_i-1][3][0],
+				bodyid:_i})
 		}
 	}
 	global.mainplayer = rndmi
