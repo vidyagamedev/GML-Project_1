@@ -102,3 +102,25 @@ function grassS(){
 	audio_play_sound_at(Grass_Running, 640-x, y, 0, 100, 300, 1, false, 1);
 	//audio_play_sound(Grass_Running,false,10)
 }
+
+
+function touch_detection(){
+/// @description Insert description here
+var _MAX_TOUCH = 4;
+
+for (var i = 0; i < _MAX_TOUCH; i++)
+{
+        var _X_LOCATION = device_mouse_x_to_gui(i);
+        var _Y_LOCATION = device_mouse_y_to_gui(i);
+        
+        var _obj_ui_XYCHECK = instance_position(_X_LOCATION, _Y_LOCATION, obj_ui_parent0);
+        var _held = device_mouse_check_button(i, mb_left);
+		//CHECKS EVERY FRAME AT LAST LOCATION OF TOUCH OR MOUSE
+		//_obj_ui_XYCHECK IF COLLISION IS TRUE 
+        
+        if (_obj_ui_XYCHECK != noone && _held)
+        {
+                _obj_ui_XYCHECK.input(i, _X_LOCATION, _Y_LOCATION);
+        }
+}
+}
