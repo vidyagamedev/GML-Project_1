@@ -36,6 +36,8 @@ else {
 	joy_x = 0;
 	joy_y = 0;
 }
-
+if visible=true {
 global._move_x = joy_x / radius;
 global._move_y = joy_y / radius;
+}
+else if (touch_id != -1) {global.RSPress = (dist <= radius)}else{global.RSPress = false}

@@ -13,8 +13,8 @@
   "name":"bkgnd",
   "overriddenProperties":[],
   "parent":{
-    "name":"managers",
-    "path":"folders/Objects/level room etc/managers.yy",
+    "name":"level room etc",
+    "path":"folders/Objects/level room etc.yy",
   },
   "parentObjectId":null,
   "persistent":false,
