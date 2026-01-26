@@ -113,14 +113,15 @@ for (var i = 0; i < _MAX_TOUCH; i++)
         var _X_LOCATION = device_mouse_x_to_gui(i);
         var _Y_LOCATION = device_mouse_y_to_gui(i);
         
-        var _obj_ui_XYCHECK = instance_position(_X_LOCATION, _Y_LOCATION, obj_ui_parent0);
+		//CHECK
+        var _obj = instance_position(_X_LOCATION, _Y_LOCATION, obj_ui_parent0);
         var _held = device_mouse_check_button(i, mb_left);
 		//CHECKS EVERY FRAME AT LAST LOCATION OF TOUCH OR MOUSE
 		//_obj_ui_XYCHECK IF COLLISION IS TRUE 
         
-        if (_obj_ui_XYCHECK != noone && _held)
+        if (_obj != noone && _held)
         {
-                _obj_ui_XYCHECK.input(i, _X_LOCATION, _Y_LOCATION);
+                _obj.input(i, _X_LOCATION, _Y_LOCATION);
         }
 }
 }
