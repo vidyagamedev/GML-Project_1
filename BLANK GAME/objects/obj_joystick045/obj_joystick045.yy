@@ -14,10 +14,7 @@
     "name":"joystick0",
     "path":"folders/Objects/level room etc/managers/joystick0.yy",
   },
-  "parentObjectId":{
-    "name":"obj_ui_parent0",
-    "path":"objects/obj_ui_parent0/obj_ui_parent0.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
