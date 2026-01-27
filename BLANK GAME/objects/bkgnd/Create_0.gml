@@ -2,18 +2,18 @@
 // You can write your code in this editor
 
 background_map = ds_map_create();
-background_map[? layer_get_id("Backgrounds_12")] = 1
-background_map[? layer_get_id("Backgrounds_11")] = 0.9
-background_map[? layer_get_id("Backgrounds_10")] = 0.8
-background_map[? layer_get_id("Backgrounds_09")] = 0.8
-background_map[? layer_get_id("Backgrounds_08")] = 0.7
-background_map[? layer_get_id("Backgrounds_07")] = 0.6
-background_map[? layer_get_id("Backgrounds_06")] = 0.5
-background_map[? layer_get_id("Backgrounds_05")] = 0.4
-background_map[? layer_get_id("Backgrounds_04")] = 0.3
-background_map[? layer_get_id("Backgrounds_03")] = 0.2
-background_map[? layer_get_id("Backgrounds_02")] = 0.1
-background_map[? layer_get_id("Backgrounds_01")] = -0.5
+background_map[? layer_get_id("Backgrounds_11")] = 1
+background_map[? layer_get_id("Backgrounds_10")] = 0.9
+background_map[? layer_get_id("Backgrounds_9")] = 0.8
+background_map[? layer_get_id("Backgrounds_8")] = 0.8
+background_map[? layer_get_id("Backgrounds_7")] = 0.7
+background_map[? layer_get_id("Backgrounds_6")] = 0.6
+background_map[? layer_get_id("Backgrounds_5")] = 0.5
+background_map[? layer_get_id("Backgrounds_4")] = 0.4
+background_map[? layer_get_id("Backgrounds_3")] = 0.3
+background_map[? layer_get_id("Backgrounds_2")] = 0.2
+background_map[? layer_get_id("Backgrounds_1")] = 0.1
+background_map[? layer_get_id("Backgrounds_0")] = -0.5
 
 //lay_id1 = layer_get_id("Assets_2");
 //lay_id3 = layer_get_id("Assets_1");
