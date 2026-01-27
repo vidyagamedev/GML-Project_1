@@ -30,8 +30,8 @@ if instance_exists(a_Player){
 }
 	
 global.lay_x+=_xspd
-layer_x(lay_id1, global.lay_x);
-layer_x(lay_id3, global.lay_x);
+//layer_x(lay_id1, global.lay_x);
+//layer_x(lay_id3, global.lay_x);
 
 
 var _b = ds_map_find_first(background_map);

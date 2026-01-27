@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 guicheck=false
-
+upp=true
 Bsndwalk=false;
 Intimgindx=0;
 

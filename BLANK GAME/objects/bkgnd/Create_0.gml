@@ -15,8 +15,8 @@ background_map[? layer_get_id("Backgrounds_03")] = 0.2
 background_map[? layer_get_id("Backgrounds_02")] = 0.1
 background_map[? layer_get_id("Backgrounds_01")] = -0.5
 
-lay_id1 = layer_get_id("Assets_2");
-lay_id3 = layer_get_id("Assets_1");
+//lay_id1 = layer_get_id("Assets_2");
+//lay_id3 = layer_get_id("Assets_1");
 global.lay_x=0
 
 _cx = camera_get_view_x(view_camera[0]);
