@@ -1,17 +1,11 @@
-LMS=delta_time/global.legamespeed
+var _DT=delta_time/global.legamespeed
 var _l=0, _r=0,_lr;
 if keyboard_check(vk_right)||global._move_x>0{_r=1}
 if keyboard_check(vk_left)||global._move_x<0{_l=1}
 if (_r-_l)>=0{_lr=1}else _lr=-1
 
-var _xspd = 0.75 *_lr * LMS
-
-
-math_set_epsilon(0.01);
+var _xspd = 0.75 *_lr * _DT
 var _cx = camera_get_view_x(view_camera[0]);
-math_set_epsilon(0);
-
-
 
 if instance_exists(a_Player){	
 	if a_Player.x<70{
@@ -29,7 +23,7 @@ if instance_exists(a_Player){
 	camera_set_view_pos(view_camera[0], _cx, 433);
 }
 	
-global.lay_x+=_xspd
+//global.lay_x+=_xspd
 
 var _b = ds_map_find_first(background_map);
 repeat(ds_map_size(background_map)){

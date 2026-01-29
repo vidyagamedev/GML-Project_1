@@ -7,5 +7,4 @@ for (var i = 1;	i <= 10; i += 1){
 	background_map[? layer_get_id("Backgrounds_"+string(i))] = 0.1*i
 }
 
-global.lay_x=0
-_cx = camera_get_view_x(view_camera[0]);
+//global.lay_x=0
