@@ -1,14 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-#region file explorer function!
-/// @description	this function returns an array with file/folder names
-/// 
-/// returns array_push(_files, _file_name)(runtime function)
-///
-/// ..
 /// @function		folder_finder(_directory,_fle=fa_directory)
-#endregion
+/// this function returns an array with file/folder names
 function folder_finder(_directory,_fle=fa_directory){
 	var _files = [];var _file_name=file_find_first(_directory+"*",_fle)
 	while (_file_name !=""){
@@ -17,26 +11,26 @@ function folder_finder(_directory,_fle=fa_directory){
 		_file_name = file_find_next()}
 	file_find_close();return _files
 }
+
 function full_import(_directory){
-	//var _directory	= working_directory+"duude/file/"
-	 //var _INCLUDEDFILES="duude/file/" 		//	"actors/"
-	spradding=function(_actor,_postn,_directory,_i,__i){///////function to do all the image file importing... 	return spr
-		var _spi = ["file name","number of frames","centre point, x","centre point, y","frames per second"]
-		var sprstr=ini_read_string(_postn, _spi[0], "");				
+	var epicimport=function(_directory){
+		var spradding=function(_actor,_postn,_directory,_i,__i){///////function to do all the image file importing... 	return spr
+			var _spi = ["file name","number of frames","centre point, x","centre point, y","frames per second"]
+			var sprstr=ini_read_string(_postn, _spi[0], "");				
 
-		var sprf=ini_read_real(_postn, _spi[1], 1 );
-		var sprx=ini_read_real(_postn, _spi[2], 0);
-		var spry=ini_read_real(_postn, _spi[3], 0);
-		var sprfps=ini_read_real(_postn, _spi[4], 5 );
+			var sprf=ini_read_real(_postn, _spi[1], 1 );
+			var sprx=ini_read_real(_postn, _spi[2], 0);
+			var spry=ini_read_real(_postn, _spi[3], 0);
+			var sprfps=ini_read_real(_postn, _spi[4], 5 );
 
-		var spr = sprite_add(_directory +_actor +"/"+ sprstr +".png" ,sprf, false, false, 0, 0);///NOW THAT WE HAVE PNG FILE. WE ADD SPRITE. NEW SPRITE NEEDS CONFIGURATIONS!!
-		sprite_collision_mask(spr, true, 1, 0, 0, 0, 0, 0, 0);
-		sprite_set_offset(spr, sprx, spry);
-		sprite_set_speed(spr, sprfps, spritespeed_framespersecond)
-		filez[_i][__i+1][1]=sprstr
-		return spr
-	}
-	epicimport=function(_directory){
+			var spr = sprite_add(_directory +_actor +"/"+ sprstr +".png" ,sprf, false, false, 0, 0);///NOW THAT WE HAVE PNG FILE. WE ADD SPRITE. NEW SPRITE NEEDS CONFIGURATIONS!!
+			sprite_collision_mask(spr, true, 1, 0, 0, 0, 0, 0, 0);
+			sprite_set_offset(spr, sprx, spry);
+			sprite_set_speed(spr, sprfps, spritespeed_framespersecond)
+			filez[_i][__i+1][1]=sprstr
+			return spr
+		}
+
 		var _animationtype=["attacking","falling","standing","jumping","moving","attack hitbox"]
 		var _parametertype=["jumpframe","jumpspeed","walkstep2","jumpframe0","LandY","fllspd","myd"]
 		var __header="other parameters"
@@ -101,27 +95,4 @@ function grassS(){
 	//audio_play_sound_at(Grass_Running,xx,yy,0,1,0,1,false,10)
 	audio_play_sound_at(Grass_Running, 640-x, y, 0, 100, 300, 1, false, 1);
 	//audio_play_sound(Grass_Running,false,10)
-}
-
-
-function touch_detection(){
-/// @description Insert description here
-var _MAX_TOUCH = 4;
-
-for (var i = 0; i < _MAX_TOUCH; i++)
-{
-        var _X_LOCATION = device_mouse_x_to_gui(i);
-        var _Y_LOCATION = device_mouse_y_to_gui(i);
-        
-		//CHECK
-        var _obj = instance_position(_X_LOCATION, _Y_LOCATION, obj_ui_parent0);
-        var _held = device_mouse_check_button(i, mb_left);
-		//CHECKS EVERY FRAME AT LAST LOCATION OF TOUCH OR MOUSE
-		//_obj_ui_XYCHECK IF COLLISION IS TRUE 
-        
-        if (_obj != noone && _held)
-        {
-                _obj.input(i, _X_LOCATION, _Y_LOCATION);
-        }
-}
 }

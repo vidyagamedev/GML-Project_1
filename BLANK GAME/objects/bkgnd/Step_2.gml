@@ -16,7 +16,6 @@ if instance_exists(a_Player){
 		camera_set_view_target(view_camera[0], a_Player);
 		_cx += _xspd
 		camera_set_view_pos(view_camera[0], _cx, 433);
-	
 	}
 }else{
 	_cx += _xspd

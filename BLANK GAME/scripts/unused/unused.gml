@@ -6,7 +6,7 @@ if false{
 		i += 1)			// Move by 1
 	{
 		// Your code here
-	}	
+	}
 	
 	
 if global.chkk1=true{chck1=true}else chck1=false//if player character is jumping or not
