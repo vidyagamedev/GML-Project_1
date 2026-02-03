@@ -23,9 +23,9 @@ function full_import(_directory){
 			var spry=ini_read_real(_postn, _spi[3], 0);
 			var sprfps=ini_read_real(_postn, _spi[4], 5 );
 
-			var spr = sprite_add(_directory +_actor +"/"+ sprstr +".png" ,sprf, false, false, 0, 0);///NOW THAT WE HAVE PNG FILE. WE ADD SPRITE. NEW SPRITE NEEDS CONFIGURATIONS!!
+			var spr = sprite_add(_directory +_actor +"/"+ sprstr +".png" ,sprf, false, false, sprx, spry);///NOW THAT WE HAVE PNG FILE. WE ADD SPRITE. NEW SPRITE NEEDS CONFIGURATIONS!!
 			sprite_collision_mask(spr, true, 1, 0, 0, 0, 0, 0, 0);
-			sprite_set_offset(spr, sprx, spry);
+			//sprite_set_offset(spr, sprx, spry);
 			sprite_set_speed(spr, sprfps, spritespeed_framespersecond)
 			filez[_i][__i+1][1]=sprstr
 			return spr
@@ -74,10 +74,11 @@ function full_import(_directory){
 }
 function spawnplayer (){
 	dudes = array_length(global.characters)
+	//randomise();//true random
 	var rndmi =irandom_range(1, dudes);
 	if rndmi >= 1 && rndmi <= dudes {
 		instance_create_layer(-5, 490,"Instances",a_Player,
-		{sprite_index: global.characters[rndmi-1][3][0],
+		{sprite_index: global.characters[rndmi-1][2][0],
 			bodyid:rndmi})
 	}
 	for (var _i = 1; _i <= dudes; _i += 1){
