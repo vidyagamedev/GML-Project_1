@@ -9,7 +9,7 @@ if instance_number(a_Player)>=1{
 			if rndmi ==i{
 				instance_create_layer (ax,ay,"Instances",NPCa, {
 					sprite_index: global.characters[i-1][3][0],
-					bodyid:_i
+					bodyid:i
 				})
 			}
 		}
@@ -21,10 +21,10 @@ if instance_number(a_Player)>=1{
 	rndmi = bodyid
 	if rndmi >= 1 && rndmi <= dudes{
 		for (var i = 1; i <= dudes; i += 1){
-			if rndmi ==_i{
+			if rndmi ==i{
 				instance_create_layer (x,y,"Instances",a_Player, {
-					sprite_index: global.characters[_i-1][3][0],
-					bodyid:_i
+					sprite_index: global.characters[i-1][3][0],
+					bodyid:i
 				})
 			}
 		}
