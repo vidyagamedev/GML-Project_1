@@ -90,10 +90,3 @@ function spawnplayer (){
 	}
 	global.mainplayer = rndmi
 }
-
-function grassS(){
-	audio_stop_sound(Grass_Running)
-	//audio_play_sound_at(Grass_Running,xx,yy,0,1,0,1,false,10)
-	audio_play_sound_at(Grass_Running, 640-x, y, 0, 100, 300, 1, false, 1);
-	//audio_play_sound(Grass_Running,false,10)
-}

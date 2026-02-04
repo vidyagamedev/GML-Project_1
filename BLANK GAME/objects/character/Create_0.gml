@@ -1,5 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+grassS=function (){
+	audio_stop_sound(Grass_Running)
+	//audio_play_sound_at(Grass_Running,xx,yy,0,1,0,1,false,10)
+	audio_play_sound_at(Grass_Running, 640-x, y, 0, 100, 300, 1, false, 1);
+	//audio_play_sound(Grass_Running,false,10)
+}
+
 guicheck=false
 upp=true
 Bsndwalk=false;
@@ -11,10 +18,6 @@ _move_y = 0
 dudes = array_length(global.characters)
 var _varynames=["spAttack","spJump2","sprIdle","spJump","sprWalk","HspAttack",
 "jumpframe","jumpspeed","walkstep2","jumpframe0","LandY","fllspd","myd"]
-
-
-
-
 
 nbCr=function(){
 var NBAttackH = sprite_add("duude/npc/NightBorne/NBAttackH.png" ,12, false, false, 40, 40);///NOW THAT WE HAVE PNG FILE. WE ADD SPRITE. NEW SPRITE NEEDS CONFIGURATIONS!!
@@ -47,7 +50,6 @@ sprIdle=NBIdle;
 	fllspd=0
 	myd=1
 }
-
 ewCr=function(){
 			var EWAttack = sprite_add("duude/file/Evil Wizard/EWAttack.png" ,8, false, false, 125, 125);
 			sprite_collision_mask(EWAttack, true, 1, 0, 0, 0, 0, 0, 0);
@@ -87,12 +89,7 @@ ewCr=function(){
 	fllspd=-0
 	myd=2
 }
-
-
-
-
-
-function pCr(){
+pCr= function(){
 var PIdle = sprite_add("duude/npc/Mushroom/PIdle.png" ,3, false, false, 75, 75);///NOW THAT WE HAVE PNG FILE. WE ADD SPRITE. NEW SPRITE NEEDS CONFIGURATIONS!!
 sprite_collision_mask(PIdle, true, 1, 0, 0, 0, 0, 0, 0);
 sprite_set_speed(PIdle, 4, spritespeed_framespersecond)
@@ -124,7 +121,6 @@ sprIdle=PIdle
 	myd=4.5
 }
 
-
 if bodyid >= 1 && bodyid <= dudes{
 	var _i =0
 	repeat(6){
@@ -137,8 +133,6 @@ if bodyid >= 1 && bodyid <= dudes{
 	}
 	global.characters[bodyid-1][0][1]=true
 }
-
-
 else if bodyid == -1 then {ewCr();}
 	//global.idbody.ew += 1}
 else if bodyid == -2 then {nbCr();}

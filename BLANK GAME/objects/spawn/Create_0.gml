@@ -7,4 +7,3 @@ cally=2
 enemycheck=0
 touched=false
 alarm[0]=30
-
