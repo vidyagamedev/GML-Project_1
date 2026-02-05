@@ -124,6 +124,7 @@
     {"id":{"name":"Object3","path":"objects/Object3/Object3.yy",},},
     {"id":{"name":"spawn","path":"objects/spawn/spawn.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"menu_functions","path":"scripts/menu_functions/menu_functions.yy",},},
     {"id":{"name":"Script1","path":"scripts/Script1/Script1.yy",},},
     {"id":{"name":"Grass_Running","path":"sounds/Grass_Running/Grass_Running.yy",},},
     {"id":{"name":"Blacka___menu","path":"sprites/Blacka___menu/Blacka___menu.yy",},},
