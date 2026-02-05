@@ -22,7 +22,7 @@ if instance_exists(a_Player){
 	camera_set_view_pos(view_camera[0], _cx, 433);
 }
 	
-//global.lay_x+=_xspd
+global.lay_x+=_xspd
 
 var _b = ds_map_find_first(background_map);
 repeat(ds_map_size(background_map)){

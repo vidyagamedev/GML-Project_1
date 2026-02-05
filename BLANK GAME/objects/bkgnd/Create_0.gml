@@ -13,3 +13,5 @@ background_map[? layer_get_id("Backgrounds_0")] = -0.5
 for (var i = 1;	i <= 10; i += 1){
 	background_map[? layer_get_id("Backgrounds_"+string(i))] = 0.1*i
 }
+
+global.lay_x=0
