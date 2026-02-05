@@ -82,3 +82,38 @@ auto_text=function(_array){
 #endregion
 draw_set_font (fnt_button)
 draw_set_valign(fa_middle)
+
+//menu[0]=true
+
+#region	button_click_check:	button click checker
+/// @description	takes values from an array like _button_array, button_click_array, 
+///
+/// checks if user device (mouse) is clicking/pressing on button
+/// 
+/// returns rectangle_in_rectangle(runtime function)
+///
+/// ..
+/// @function		button_click_check(_array)
+button_click_check=function(_array){
+	var _device=_array[0]
+//if global.fakeclick=false{
+	var _mx = device_mouse_x_to_gui(_device)
+	var _my = device_mouse_y_to_gui(_device)
+//}else if global.fakeclick=true{var _mx =-1; var _my= -1}
+	var _x=		_array[1]
+	var _y=		_array[2]
+	var _dx=	_array[3]
+	var _dy=	_array[4]
+	//show_debug_message("_x, autocalculated, mousecheck, ratio: {0}, {1}, {2}, {3}",_x,_x-(_x-_dx),(_x-_mx),(_x-_mx)/(_x-(_x-_dx)))
+	//show_debug_message("_y, autocalculated, mousecheck, ratio: {0}, {1}, {2}, {3}",_y,_y-(_y-_dy),(_y-_my),(_y-_my)/(_y-(_y-_dy)))
+	return rectangle_in_rectangle(_x-_dx,_y-_dy,_x+_dx,_y+_dy,_mx-1,_my-1,_mx+1,_my+1)
+}
+#endregion
+
+//easiest way to check what should be happenig (is) by using arrays with boolean values
+#region truth
+/// @description	returns array_get_index(_array ,true)
+///
+/// ..
+/// @function		truth(_array)
+truth=function(_array){return array_get_index(_array ,true)}						#endregion
