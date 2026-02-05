@@ -12,6 +12,7 @@ function folder_finder(_directory,_fle=fa_directory){
 	file_find_close();return _files
 }
 
+/// @description import characters from local folders with png and ini files
 function full_import(_directory){
 	var epicimport=function(_directory){
 		var spradding=function(_actor,_postn,_directory,_i,__i){///////function to do all the image file importing... 	return spr

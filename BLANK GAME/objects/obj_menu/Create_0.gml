@@ -2,6 +2,7 @@
 // You can write your code in this editor
 ecks=x
 
+#region auto_button_text:	epic button creator
 /// @description	input into: menu_text_array, button_click_array
 /// @function		auto_button_text(_text_array,_x,_y,_text,_clicky,_button_array,_halign,_xscale,_yscale,_angle,_device)
 /// @arg			_text_array
@@ -17,7 +18,7 @@ auto_button_text=function(_text_array,_x,_y,_text,_clicky=false,_button_array=[]
 	}
 	array_push(_text_array,[_halign,_x,_y,_text,_xscale,_yscale, _angle])
 }
-	
+#endregion	
 	
 menu_text_array=[]
 button_click_array=[]
