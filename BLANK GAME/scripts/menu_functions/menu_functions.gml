@@ -126,13 +126,15 @@ extra_button_array=[]
 			auto_button_text(menu_text_array,320,246, "Modify Game?",true,button_click_array,,,,2.2,2.2)
 		}break
 		case 1:{
+			if !(instance_exists(a_Player_GUI)){
 			auto_button_text(menu_text_array,320,64,"Character Preview",,,,0.7,0.7)
 			var _array=folder_finder(working_directory+"duude/file/")
 			menu_list(_array,menu1_page,menu_text_array,sub_button_array)
 			//lastpage = ceil((array_length(characters))/5);
-			auto_button_text(menu_text_array,417,87, "<-",true,extra_button_array)
-			auto_button_text(menu_text_array,471,87, "->",true,extra_button_array)
-			auto_button_text(menu_text_array,444,87, menu1_page)
+			auto_button_text(menu_text_array,417,273, "<-",true,extra_button_array)
+			auto_button_text(menu_text_array,471,273, "->",true,extra_button_array)
+			auto_button_text(menu_text_array,444,273, menu1_page)
+		}
 		}break
 		case 2:{
 			auto_button_text(menu_text_array,320,64,"Game Modification",,,,0.7,0.7)

@@ -112,6 +112,7 @@
   "name":"BLANK GAME",
   "resources":[
     {"id":{"name":"fnt_button","path":"fonts/fnt_button/fnt_button.yy",},},
+    {"id":{"name":"a_Player_GUI","path":"objects/a_Player_GUI/a_Player_GUI.yy",},},
     {"id":{"name":"a_Player","path":"objects/a_Player/a_Player.yy",},},
     {"id":{"name":"bkgnd","path":"objects/bkgnd/bkgnd.yy",},},
     {"id":{"name":"character","path":"objects/character/character.yy",},},

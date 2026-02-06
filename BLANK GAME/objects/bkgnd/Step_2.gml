@@ -7,7 +7,7 @@ if (_r-_l)>=0{_lr=1}else _lr=-1
 var _xspd = 0.75 *_lr * _DT
 var _cx = camera_get_view_x(view_camera[0]);
 
-if instance_exists(a_Player){	
+if instance_exists(a_Player)&& !(instance_exists(a_Player_GUI)){	
 	if a_Player.x<70{
 		camera_set_view_target(view_camera[0], noone);
 		camera_set_view_pos(view_camera[0],a_Player.x-70,433)

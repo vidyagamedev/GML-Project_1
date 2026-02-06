@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 var _returned_array			= auto_array_loop(button_click_array,button_click_check,true)
-//var _returned_sub_array		= auto_array_loop(sub_button_array,button_click_check,true)
+var _returned_sub_array		= auto_array_loop(sub_button_array,button_click_check,true)
 var _returned_extra_array	= auto_array_loop(extra_button_array,button_click_check,true)
 switch truth(menu){
 	case 0:{
@@ -22,7 +22,8 @@ switch truth(menu){
 	case 1:{
 		switch truth(_returned_array){
 			case 0:{
-				menu_change(0)
+				if instance_exists(a_Player_GUI){instance_destroy(a_Player_GUI)}
+				else menu_change(0)
 			}break
 		}
 		switch truth(_returned_extra_array){
@@ -34,6 +35,10 @@ switch truth(menu){
 				menu1_page+=1
 			}break
 		}
+		var _spawn =truth(_returned_sub_array)+1
+		if _spawn>0{instance_create_layer(300, 300,"Instances",a_Player_GUI,{
+			sprite_index: global.characters[_spawn-1][2][0],
+			bodyid: _spawn})}
 		menu_script()
 	}break
 	case 2:{
