@@ -19,7 +19,6 @@ auto_button_text=function(_text_array,_x,_y,_text,_clicky=false,_button_array=[]
 	array_push(_text_array,[_halign,_x,_y,_text,_xscale,_yscale, _angle])
 }
 #endregion	
-	
 #region	auto_array_loop:	universal 2d array function applier
 /// @description	running another function through each array in a bigger array (auto_text,button_click_check)
 /// optionally returning an array with possibly returned values from the other function. use returned array with runtime function array_get_index or my truth function
@@ -53,7 +52,6 @@ var _btw_same_thing=function(){
 }//so btw same thing? returning things is always optional...
 //	????	////	running another function through each element in an array (auto_text,button_click_check)		//_any_d_array
 #endregion
-
 #region	auto_text:			auto text maker
 /// @description	takes values from an array like _text_array, menu_text_array
 ///
@@ -72,7 +70,6 @@ auto_text=function(_array){
 	draw_set_halign(_halign);draw_text_transformed(_x,_y,_text,_xscale,_yscale, _angle)
 }
 #endregion
-
 #region	button_click_check:	button click checker
 /// @description	takes values from an array like _button_array, button_click_array, 
 ///
@@ -97,7 +94,6 @@ button_click_check=function(_array){
 	return rectangle_in_rectangle(_x-_dx,_y-_dy,_x+_dx,_y+_dy,_mx-1,_my-1,_mx+1,_my+1)
 }
 #endregion
-
 #region truth
 //easiest way to check what should be happening, by using arrays with boolean values
 /// @description	returns array_get_index(_array ,true)
@@ -106,11 +102,22 @@ button_click_check=function(_array){
 /// @function		truth(_array)
 truth=function(_array){return array_get_index(_array ,true)}						
 #endregion
-
+menu_list=function(_array,_p,_text_array,_button_array){
+	var _l=array_length(_array)
+	if ((_p+1)*5)<_l{_l=10}
+	for (var i = ((_p-1)*5); i < _l; i += 1){
+		var _a=+160*((i-(_p-1)*5) div 5)
+		var _b=5*(i div 5)
+		auto_button_text ( _text_array,227+_a, 123+(i-_b)*29, _array[i],true,_button_array,,,,1.2)
+		//auto_button_text(_text_array,227+_a, 123+(i-_b)*29, i , true, _button_array, , , , 1.2 )
+	}
+}
 
 menu_script=function(){
 menu_text_array=[]
-button_click_array=[]	
+button_click_array=[]
+sub_button_array=[]
+extra_button_array=[]
 	switch truth(menu){
 		case 0:{
 			auto_button_text(menu_text_array,320,64,"Welcome",,,,0.7,0.7)
@@ -119,6 +126,13 @@ button_click_array=[]
 			auto_button_text(menu_text_array,320,246, "Modify Game?",true,button_click_array,,,,2.2,2.2)
 		}break
 		case 1:{
+			auto_button_text(menu_text_array,320,64,"Character Preview",,,,0.7,0.7)
+			var _array=folder_finder(working_directory+"duude/file/")
+			menu_list(_array,menu1_page,menu_text_array,sub_button_array)
+			//lastpage = ceil((array_length(characters))/5);
+			auto_button_text(menu_text_array,417,87, "<-",true,extra_button_array)
+			auto_button_text(menu_text_array,471,87, "->",true,extra_button_array)
+			auto_button_text(menu_text_array,444,87, menu1_page)
 		}break
 		case 2:{
 			auto_button_text(menu_text_array,320,64,"Game Modification",,,,0.7,0.7)
@@ -132,13 +146,6 @@ button_click_array=[]
 			auto_button_text(menu_text_array,320,186, "Customize Characters?",true,button_click_array,,,,2.2,2.2)
 			auto_button_text(menu_text_array,320,246, "Create New Character?",true,button_click_array,,,,2.2,2.2)
 		}break
-		case 4:{
-			auto_button_text(menu_text_array,320,64,"Background Modification",,,,0.7,0.7)
-			//auto_button_text(menu_text_array,320,190,"Coming Soon!",,,,0.7,0.7)
-		}break
-		case 5:{
-			auto_button_text(menu_text_array,320,64,"Level Modification",,,,0.7,0.7)
-		}break
 		case 9000:{
 			
 		}break
@@ -150,7 +157,6 @@ button_click_array=[]
 		auto_button_text(menu_text_array,320,129,"Coming Soon!",,,,0.7,0.7)
 	}}
 }
-
 menu_change=function(_menu){
 	menu=[];
 	menu[_menu]=true;
