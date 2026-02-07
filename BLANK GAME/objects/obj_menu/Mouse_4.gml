@@ -26,15 +26,7 @@ switch truth(menu){
 				else menu_change(0)
 			}break
 		}
-		switch truth(_returned_extra_array){
-			case 0:{
-				if menu1_page!=1
-				menu1_page-=1
-			}break
-			case 1:{
-				menu1_page+=1
-			}break
-		}
+		menu1_page=page_buttons(_returned_extra_array,menu1_page)
 		var _spawn =truth(_returned_sub_array)+1
 		if _spawn>0{instance_create_layer(300, 300,"Instances",a_Player_GUI,{
 			sprite_index: global.characters[_spawn-1][2][0],
@@ -60,6 +52,8 @@ switch truth(menu){
 	case 3:{
 		switch truth(_returned_array){
 			case 0:{
+				menu4_page=1
+				menu_change(4)
 			}break
 			case 1:{
 			}break
@@ -69,6 +63,17 @@ switch truth(menu){
 				menu_change(2)
 			}break
 		}
+	}break
+	case 4:{
+		switch truth(_returned_array){
+			case 0:{
+				menu_change(3)
+			}break
+		}
+		menu4_page=page_buttons(_returned_extra_array,menu4_page)
+		var _select =truth(_returned_sub_array)
+		global.selection[_select+1]=!(global.selection[_select+1])
+		menu_script()
 	}break
 	case -1:{
 		switch truth(_returned_array){
@@ -88,3 +93,5 @@ switch truth(menu){
 		}
 	}break
 }
+show_debug_message(_returned_sub_array)
+show_debug_message(global.selection)

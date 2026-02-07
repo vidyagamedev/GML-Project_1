@@ -4,11 +4,16 @@ var _cx = camera_get_view_x(view_camera[0]);
 if instance_number(a_Player)>0{
 //&& instance_number(a_Player_GUI)=0{
 	if global.mainplayer>=0 && instance_number(NPCa)<5{
-		if cally >= 1 && cally <= dudes {
+		//if cally >= 1 && cally <= dudes {
+		//	if global.selection[cally] {
+		//if cally==dudes{
+		//	cally=1}
+		//else {cally +=1}
+		//	}
 			var _i =0
 			repeat(dudes){
 				_i +=1
-				if cally ==_i && global.characters[_i-1][0][1]=false {
+				if cally ==_i && global.characters[_i-1][0][1]=false && !(global.selection[cally]){
 					instance_create_layer
 					(_cx -5, 690,"Instances",NPCa,
 					{
@@ -17,7 +22,7 @@ if instance_number(a_Player)>0{
 					})
 				}
 			}
-		}
+		//}
 		if cally==dudes{
 			cally=1}
 		else {cally +=1}

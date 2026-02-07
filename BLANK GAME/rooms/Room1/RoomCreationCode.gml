@@ -13,3 +13,4 @@ instance_create_layer(480, 288, "Instances_staging", obj_joystick0,
 
 //global.lay_x=0
 camera_set_view_pos(view_camera[0], 0, 313);
+//global.characters = full_import(working_directory+"duude/file/")

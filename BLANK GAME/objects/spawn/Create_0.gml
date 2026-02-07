@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.characters = full_import(working_directory+"duude/file/")
+//global.characters = full_import(working_directory+"duude/file/")
 spawnplayer()
 
 cally=2
