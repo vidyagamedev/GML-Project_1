@@ -102,7 +102,7 @@ button_click_check=function(_array){
 /// @function		truth(_array)
 truth=function(_array){return array_get_index(_array ,true)}						
 #endregion
-menu_list=function(_array,_p,_text_array,_button_array,_menu4_check=false){
+menu_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
 	var _l=array_length(_array)
 	if ((_p+1)*5)<_l{_l=10}
 	for (var i = ((_p-1)*5); i < _l; i += 1){
@@ -180,6 +180,25 @@ extra_button_array=[]
 		case 4:{
 			auto_button_text(menu_text_array,320,64,"Choosing Comrades",,,,0.7,0.7)
 			character_list_preset(menu4_page,true)
+		}break
+		case 5:{
+			auto_button_text(menu_text_array,320,64,"Customizing Characters",,,,0.7,0.7)
+			character_list_preset(menu5_page)
+		}break
+		case 6:{
+			//menu_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
+			//selected_char
+			var _array=folder_finder(working_directory+"duude/file/")
+			//auto_button_text(menu_text_array,320,64,"Customizing "+_array[selected_char],,,,0.7,0.7)
+			auto_button_text(menu_text_array,320,64,_array[selected_char],,,,0.7,0.7)
+			if (instance_exists(a_Player_GUI)){
+				auto_button_text(menu_text_array,320, 100,"Customize Animations and Parameters?",true,button_click_array)
+			}
+			else{
+				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
+				menu_list(_animationtype,,menu_text_array,sub_button_array)
+				auto_button_text(menu_text_array,320, 273,"Preview",true,button_click_array)
+			}
 		}break
 		case 9000:{
 			

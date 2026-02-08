@@ -56,6 +56,8 @@ switch truth(menu){
 				menu_change(4)
 			}break
 			case 1:{
+				menu5_page=1
+				menu_change(5)
 			}break
 			case 2:{
 			}break
@@ -75,6 +77,38 @@ switch truth(menu){
 		global.selection[_select+1]=!(global.selection[_select+1])
 		menu_script()
 	}break
+	case 5:{
+		switch truth(_returned_array){
+			case 0:{
+				menu_change(3)
+			}break
+		}
+		var _select =truth(_returned_sub_array)
+		if _select >=0{
+			selected_char=_select
+			menu_change(6)
+		}
+	}break
+	case 6:{
+		switch truth(_returned_array){
+			case 0:{
+				if !(instance_exists(a_Player_GUI)){
+					instance_create_layer(300, 300,"Instances",a_Player_GUI,{
+						sprite_index: global.characters[selected_char][2][0],
+						bodyid: selected_char+1})
+					menu_script()
+				}
+				else{
+					instance_destroy(a_Player_GUI)
+					menu_script()
+				}
+			}break
+			case 1:{
+				menu_change(5)
+			}break
+		}
+	}break
+
 	case -1:{
 		switch truth(_returned_array){
 			case 0:{
