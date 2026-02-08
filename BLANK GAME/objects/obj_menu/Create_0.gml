@@ -10,3 +10,4 @@ menu=[];menu[0]=true
 menu_script()
 global.characters = full_import(working_directory+"duude/file/")
 if !(variable_global_exists("selection")) then global.selection[array_length(global.characters)]=false
+selected_action=-1

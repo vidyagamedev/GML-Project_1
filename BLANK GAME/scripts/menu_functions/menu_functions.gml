@@ -197,7 +197,7 @@ extra_button_array=[]
 			else{
 				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
 				menu_list(_animationtype,,menu_text_array,sub_button_array)
-				auto_button_text(menu_text_array,320, 273,"Preview",true,button_click_array)
+				auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
 			}
 		}break
 		case 9000:{

@@ -90,12 +90,15 @@ switch truth(menu){
 		}
 	}break
 	case 6:{
+		show_debug_message(global.characters[selected_char])
 		switch truth(_returned_array){
 			case 0:{
 				if !(instance_exists(a_Player_GUI)){
 					instance_create_layer(269, 236,"Instances",a_Player_GUI,{
 						sprite_index: global.characters[selected_char][2][0],
 						bodyid: selected_char+1})
+						selected_action=-1
+						instance_destroy(obj_gui_sprite)
 					menu_script()
 				}
 				else{
@@ -105,12 +108,23 @@ switch truth(menu){
 			}break
 			case 1:{
 				menu_change(5)
+				selected_action=-1
+				instance_destroy(obj_gui_sprite)
 			}break
 		}
 		var _select =truth(_returned_sub_array)
-		if _select >=0{
+		if _select >=0||_select <6{
 			selected_action=_select
+			show_debug_message(selected_action)
 			//menu_change(6)
+			//current_sprite=global.characters[selected_char][selected_action+1][0]
+			//giant_array_for_character[_posit][5]
+			//sprite_set_speed(sprite_index, _sprfps, spritespeed_framespersecond);
+			//	draw_sprite(global.characters[selected_char][selected_action+1][0],image_index,300,277)
+			instance_destroy(obj_gui_sprite)
+			instance_create_layer(300,277,"Instances",obj_gui_sprite,
+			{sprite_index: global.characters[selected_char][selected_action+1][0]})
+
 		}
 	}break
 

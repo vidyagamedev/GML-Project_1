@@ -120,6 +120,7 @@
     {"id":{"name":"htbxP","path":"objects/htbxP/htbxP.yy",},},
     {"id":{"name":"NPCa","path":"objects/NPCa/NPCa.yy",},},
     {"id":{"name":"NPCe","path":"objects/NPCe/NPCe.yy",},},
+    {"id":{"name":"obj_gui_sprite","path":"objects/obj_gui_sprite/obj_gui_sprite.yy",},},
     {"id":{"name":"obj_joystick0","path":"objects/obj_joystick0/obj_joystick0.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
     {"id":{"name":"Object3","path":"objects/Object3/Object3.yy",},},

@@ -10,3 +10,8 @@ switch _menu{
 	}
 }
 auto_array_loop(menu_text_array,auto_text)
+
+if selected_action>=0{
+	//draw_sprite(global.characters[selected_char][selected_action+1][0],image_index,300,277)
+	
+}
