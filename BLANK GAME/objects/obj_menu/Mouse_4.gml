@@ -28,7 +28,7 @@ switch truth(menu){
 		}
 		menu1_page=page_buttons(_returned_extra_array,menu1_page)
 		var _spawn =truth(_returned_sub_array)+1
-		if _spawn>0{instance_create_layer(300, 300,"Instances",a_Player_GUI,{
+		if _spawn>0{instance_create_layer(300, 236,"Instances",a_Player_GUI,{
 			sprite_index: global.characters[_spawn-1][2][0],
 			bodyid: _spawn})}
 		menu_script()
@@ -93,7 +93,7 @@ switch truth(menu){
 		switch truth(_returned_array){
 			case 0:{
 				if !(instance_exists(a_Player_GUI)){
-					instance_create_layer(300, 300,"Instances",a_Player_GUI,{
+					instance_create_layer(269, 236,"Instances",a_Player_GUI,{
 						sprite_index: global.characters[selected_char][2][0],
 						bodyid: selected_char+1})
 					menu_script()
@@ -106,6 +106,11 @@ switch truth(menu){
 			case 1:{
 				menu_change(5)
 			}break
+		}
+		var _select =truth(_returned_sub_array)
+		if _select >=0{
+			selected_action=_select
+			//menu_change(6)
 		}
 	}break
 

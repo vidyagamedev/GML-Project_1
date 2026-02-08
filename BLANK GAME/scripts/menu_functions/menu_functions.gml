@@ -192,7 +192,7 @@ extra_button_array=[]
 			//auto_button_text(menu_text_array,320,64,"Customizing "+_array[selected_char],,,,0.7,0.7)
 			auto_button_text(menu_text_array,320,64,_array[selected_char],,,,0.7,0.7)
 			if (instance_exists(a_Player_GUI)){
-				auto_button_text(menu_text_array,320, 100,"Customize Animations and Parameters?",true,button_click_array)
+				//auto_button_text(menu_text_array,320, 100,"Customize Animations and Parameters?",true,button_click_array)
 			}
 			else{
 				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
