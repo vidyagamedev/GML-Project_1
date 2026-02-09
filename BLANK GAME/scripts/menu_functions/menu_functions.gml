@@ -147,8 +147,10 @@ sprite_list=function(_p=1){
 	//var _sprfs=sprite_get_number(current_sprite)-((spage-1)*5)
 	var _fps = _current_sprite
 	var _l=sprite_get_number(_current_sprite)
-	if ((_p+1)*5)<_l{_l=10}
-	for (var i = ((_p-1)*5); i < _l; i += 1){
+
+	var _start=((_p-1)*5)
+	if ((_p+1)*5)<_l{_l=10+_start}
+	for (var i = _start; i < _l; i += 1){
 		var _b=((i-(_p-1)*5) div 5)
 		var _a=((i-(_p-1)*5) mod 5)
 		draw_sprite(_current_sprite, i, 178.9 + _a * 69, 123 + _b*63);
@@ -231,7 +233,8 @@ extra_button_array=[]
 		case 8:{
 			var _array=folder_finder(working_directory+"duude/file/")
 			auto_button_text(menu_text_array,320,64,_array[selected_char-1],,,,0.7,0.7)
-				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
+				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
+				//,"","","","Parameters"]
 				menu_list(_animationtype,,menu_text_array,sub_button_array)
 				//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
 		}break
@@ -242,7 +245,9 @@ extra_button_array=[]
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
 			//auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,button_click_array)
 			//auto_button_text(menu_text_array,388, 230,"Change Animation?",true,button_click_array)
-		}break
+			auto_button_text(menu_text_array,417,273, "<-",true,extra_button_array)
+			auto_button_text(menu_text_array,471,273, "->",true,extra_button_array)
+			auto_button_text(menu_text_array,444,273, page_9)		}break
 		case 9000:{
 			
 		}break

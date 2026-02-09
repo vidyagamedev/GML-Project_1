@@ -62,6 +62,7 @@ switch truth(menu){
 		var _select =truth(_returned_sub_array)
 		if _select >=0&&_select <6{
 			selected_action=_select
+			page_9=1
 			menu_change(9)
 			if instance_exists(a_Player_GUI){instance_destroy(a_Player_GUI)}
 			instance_destroy(obj_gui_sprite)
@@ -78,6 +79,8 @@ switch truth(menu){
 
 			}break
 		}
+		page_9=page_buttons(_returned_extra_array,page_9)
+		menu_script()
 	}break
 	case 2:{
 		switch truth(_returned_array){
