@@ -151,7 +151,7 @@ sprite_list=function(_p=1){
 	for (var i = ((_p-1)*5); i < _l; i += 1){
 		var _b=((i-(_p-1)*5) div 5)
 		var _a=((i-(_p-1)*5) mod 5)
-		draw_sprite(_current_sprite, i, 178.9 + _a * 69, 110 + _b*63);
+		draw_sprite(_current_sprite, i, 178.9 + _a * 69, 123 + _b*63);
 		//auto_button_text ( _text_array,227+_a, 123+(i-_b)*29, _array[i],true,_button_array,,,,1.2)
 		//auto_button_text(_text_array,227+_a, 123+(i-_b)*29, i , true, _button_array, , , , 1.2 )
 		//if _menu4_check{comrades_check(_text_array,i,_a,_b)}
@@ -223,6 +223,9 @@ extra_button_array=[]
 			//auto_button_text(menu_text_array,320,64,_array[selected_char]+" "+_animationtype[selected_action],,,,0.7,0.7)
 			auto_button_text(menu_text_array,320,42,_array[selected_char],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
+			//auto_button_text(menu_text_array,320, 230,"Edit Animation?",true,button_click_array)
+			auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,button_click_array)
+			auto_button_text(menu_text_array,388, 230,"Change Animation?",true,button_click_array)
 		}break
 		case 9000:{
 			

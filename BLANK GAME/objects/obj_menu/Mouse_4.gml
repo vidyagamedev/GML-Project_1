@@ -130,6 +130,12 @@ switch truth(menu){
 	case 7:{
 		switch truth(_returned_array){
 			case 0:{
+				
+			}break
+			case 1:{
+				
+			}break
+			case 2:{
 				menu_change(6)
 			}break
 		}
