@@ -22,16 +22,62 @@ switch truth(menu){
 	case 1:{
 		switch truth(_returned_array){
 			case 0:{
-				if instance_exists(a_Player_GUI){instance_destroy(a_Player_GUI)}
+				if (instance_exists(a_Player_GUI)){
+				menu_change(8)
+				}
+				else menu_change(0)
+			}break
+			case 1:{
+				if instance_exists(a_Player_GUI){
+					instance_destroy(a_Player_GUI)
+					menu_script()}
 				else menu_change(0)
 			}break
 		}
 		menu1_page=page_buttons(_returned_extra_array,menu1_page)
 		var _spawn =truth(_returned_sub_array)+1
-		if _spawn>0{instance_create_layer(300, 236,"Instances",a_Player_GUI,{
+		if _spawn>0
+		{
+			instance_create_layer(300, 236,"Instances",a_Player_GUI,{
 			sprite_index: global.characters[_spawn-1][2][0],
-			bodyid: _spawn})}
+			bodyid: _spawn})
 		menu_script()
+		selected_char=_spawn
+			}
+		//show_debug_message(selected_char)
+	}break
+	case 8:{
+		show_debug_message(selected_char)
+		switch truth(_returned_array){
+			case 0:{
+				instance_destroy(obj_gui_sprite)
+				if !(instance_exists(a_Player_GUI)){
+				instance_create_layer(300, 236,"Instances",a_Player_GUI,{
+					sprite_index: global.characters[selected_char-1][2][0],
+					bodyid: selected_char})
+				}
+				menu_change(1)
+			}break
+		}
+		var _select =truth(_returned_sub_array)
+		if _select >=0&&_select <6{
+			selected_action=_select
+			menu_change(9)
+			if instance_exists(a_Player_GUI){instance_destroy(a_Player_GUI)}
+			instance_destroy(obj_gui_sprite)
+			instance_create_layer(300,277,"Instances",obj_gui_sprite,
+			{sprite_index: global.characters[selected_char-1][selected_action+1][0]})
+			//show_debug_message(selected_char)
+			 //show_debug_message(global.characters[selected_char])
+		}
+	}break
+	case 9:{
+		switch truth(_returned_array){
+			case 0:{
+				menu_change(8)
+
+			}break
+		}
 	}break
 	case 2:{
 		switch truth(_returned_array){
@@ -159,5 +205,5 @@ switch truth(menu){
 		}
 	}break
 }
-show_debug_message(_returned_sub_array)
-show_debug_message(global.selection)
+//show_debug_message(_returned_sub_array)
+//show_debug_message(global.selection)

@@ -180,6 +180,7 @@ extra_button_array=[]
 				var _array=folder_finder(working_directory+"duude/file/")
 				var _char= _array[(a_Player_GUI.bodyid)-1]
 				auto_button_text(menu_text_array,320,64,_char,,,,0.7,0.7)
+				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,button_click_array)
 			}
 		}break
 		case 2:{
@@ -226,6 +227,21 @@ extra_button_array=[]
 			//auto_button_text(menu_text_array,320, 230,"Edit Animation?",true,button_click_array)
 			auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,button_click_array)
 			auto_button_text(menu_text_array,388, 230,"Change Animation?",true,button_click_array)
+		}break
+		case 8:{
+			var _array=folder_finder(working_directory+"duude/file/")
+			auto_button_text(menu_text_array,320,64,_array[selected_char-1],,,,0.7,0.7)
+				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
+				menu_list(_animationtype,,menu_text_array,sub_button_array)
+				//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
+		}break
+		case 9:{
+			var _array=folder_finder(working_directory+"duude/file/")
+			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
+			auto_button_text(menu_text_array,320,42,_array[selected_char-1],,,,0.369,0.369)
+			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
+			//auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,button_click_array)
+			//auto_button_text(menu_text_array,388, 230,"Change Animation?",true,button_click_array)
 		}break
 		case 9000:{
 			
