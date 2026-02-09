@@ -30,11 +30,15 @@ switch truth(menu){
 			case 1:{
 				if instance_exists(a_Player_GUI){
 					instance_destroy(a_Player_GUI)
-					menu_script()}
+					menu_script()
+				}
 				else menu_change(0)
 			}break
 		}
-		menu1_page=page_buttons(_returned_extra_array,menu1_page)
+		if truth(_returned_extra_array)>=0{
+			menu1_page=page_buttons(_returned_extra_array,menu1_page)
+			menu_script()
+		}
 		var _spawn =truth(_returned_sub_array)+1
 		if _spawn>0
 		{
