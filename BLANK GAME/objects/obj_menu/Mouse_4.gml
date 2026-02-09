@@ -113,10 +113,10 @@ switch truth(menu){
 			}break
 		}
 		var _select =truth(_returned_sub_array)
-		if _select >=0||_select <6{
+		if _select >=0&&_select <6{
 			selected_action=_select
 			show_debug_message(selected_action)
-			//menu_change(6)
+			menu_change(7)
 			//current_sprite=global.characters[selected_char][selected_action+1][0]
 			//giant_array_for_character[_posit][5]
 			//sprite_set_speed(sprite_index, _sprfps, spritespeed_framespersecond);
@@ -125,6 +125,13 @@ switch truth(menu){
 			instance_create_layer(300,277,"Instances",obj_gui_sprite,
 			{sprite_index: global.characters[selected_char][selected_action+1][0]})
 
+		}
+	}break
+	case 7:{
+		switch truth(_returned_array){
+			case 0:{
+				menu_change(6)
+			}break
 		}
 	}break
 

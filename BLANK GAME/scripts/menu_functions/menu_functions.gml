@@ -140,6 +140,23 @@ page_buttons=function(_button_array,_menu_page){
 character_list_preset=function(_menu_page,_menu4_check=false){
 	character_list(_menu_page,menu_text_array, sub_button_array, extra_button_array, working_directory+"duude/file/",_menu4_check)
 }
+//sprite_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
+sprite_list=function(_p=1){
+	//var _l=array_length(_array)
+	var _current_sprite=obj_gui_sprite.sprite_index
+	//var _sprfs=sprite_get_number(current_sprite)-((spage-1)*5)
+	var _fps = _current_sprite
+	var _l=sprite_get_number(_current_sprite)
+	if ((_p+1)*5)<_l{_l=10}
+	for (var i = ((_p-1)*5); i < _l; i += 1){
+		var _b=((i-(_p-1)*5) div 5)
+		var _a=((i-(_p-1)*5) mod 5)
+		draw_sprite(_current_sprite, i, 178.9 + _a * 69, 110 + _b*63);
+		//auto_button_text ( _text_array,227+_a, 123+(i-_b)*29, _array[i],true,_button_array,,,,1.2)
+		//auto_button_text(_text_array,227+_a, 123+(i-_b)*29, i , true, _button_array, , , , 1.2 )
+		//if _menu4_check{comrades_check(_text_array,i,_a,_b)}
+	}
+}
 
 menu_script=function(){
 menu_text_array=[]
@@ -199,6 +216,13 @@ extra_button_array=[]
 				menu_list(_animationtype,,menu_text_array,sub_button_array)
 				auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
 			}
+		}break
+		case 7:{
+			var _array=folder_finder(working_directory+"duude/file/")
+			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
+			//auto_button_text(menu_text_array,320,64,_array[selected_char]+" "+_animationtype[selected_action],,,,0.7,0.7)
+			auto_button_text(menu_text_array,320,42,_array[selected_char],,,,0.369,0.369)
+			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
 		}break
 		case 9000:{
 			
