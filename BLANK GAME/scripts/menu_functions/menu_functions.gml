@@ -102,6 +102,7 @@ button_click_check=function(_array){
 /// @function		truth(_array)
 truth=function(_array){return array_get_index(_array ,true)}						
 #endregion
+
 menu_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
 	var _l=array_length(_array)
 	if ((_p+1)*5)<_l{_l=10}
@@ -109,22 +110,13 @@ menu_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
 		var _a=+160*((i-(_p-1)*5) div 5)
 		var _b=5*(i div 5)
 		auto_button_text ( _text_array,227+_a, 123+(i-_b)*29, _array[i],true,_button_array,,,,1.2)
-		//auto_button_text(_text_array,227+_a, 123+(i-_b)*29, i , true, _button_array, , , , 1.2 )
+
 		if _menu4_check{comrades_check(_text_array,i,_a,_b)}
 	}
 }
 comrades_check=function(_text_array,i,_a,_b){
-		if global.selection[i+1]{}
 		var _check = global.selection[i+1] ? "  X"  : "-./"
 		auto_button_text(_text_array,303+_a, 123+(i-_b)*29, _check , , , , , , 1.2 )
-}
-character_list=function(_menu_page,menu_array,_list_array,_button_array,_directory,_menu4_check=false){
-			var _array=folder_finder(_directory)
-			menu_list(_array,_menu_page,menu_array,_list_array,_menu4_check)
-			//lastpage = ceil((array_length(characters))/5);
-			auto_button_text(menu_array,417,273, "<-",true,_button_array)
-			auto_button_text(menu_array,471,273, "->",true,_button_array)
-			auto_button_text(menu_array,444,273, _menu_page)
 }
 page_buttons=function(_button_array,_menu_page){
 		switch truth(_button_array){
@@ -137,26 +129,16 @@ page_buttons=function(_button_array,_menu_page){
 		}
 		return _menu_page
 }
-character_list_preset=function(_menu_page,_menu4_check=false){
-	character_list(_menu_page,menu_text_array, sub_button_array, extra_button_array, working_directory+"duude/file/",_menu4_check)
-}
-//sprite_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
 sprite_list=function(_p=1){
-	//var _l=array_length(_array)
 	var _current_sprite=obj_gui_sprite.sprite_index
-	//var _sprfs=sprite_get_number(current_sprite)-((spage-1)*5)
-	var _fps = _current_sprite
-	var _l=sprite_get_number(_current_sprite)
-
 	var _start=((_p-1)*5)
+
+	var _l=sprite_get_number(_current_sprite)
 	if ((_p+1)*5)<_l{_l=10+_start}
 	for (var i = _start; i < _l; i += 1){
 		var _b=((i-(_p-1)*5) div 5)
 		var _a=((i-(_p-1)*5) mod 5)
 		draw_sprite(_current_sprite, i, 178.9 + _a * 69, 123 + _b*63);
-		//auto_button_text ( _text_array,227+_a, 123+(i-_b)*29, _array[i],true,_button_array,,,,1.2)
-		//auto_button_text(_text_array,227+_a, 123+(i-_b)*29, i , true, _button_array, , , , 1.2 )
-		//if _menu4_check{comrades_check(_text_array,i,_a,_b)}
 	}
 }
 
@@ -166,6 +148,8 @@ button_click_array=[]
 sub_button_array=[]
 extra_button_array=[]
 
+auto_button_text(menu_text_array,12,345,"0.2 Preview",true,extra_button_array,fa_left)
+
 	switch truth(menu){
 		case 0:{
 			auto_button_text(menu_text_array,320,64,"Welcome",,,,0.7,0.7)
@@ -174,19 +158,20 @@ extra_button_array=[]
 			auto_button_text(menu_text_array,320,246, "Modify Game?",true,button_click_array,,,,2.2,2.2)
 		}break
 		case 1:{
+			var _array=folder_finder(working_directory+"duude/file/")
 			if !(instance_exists(a_Player_GUI)){
 				auto_button_text(menu_text_array,320,64,"Character Preview",,,,0.7,0.7)
 				//character_list_preset(menu1_page)
-				var _array=folder_finder(working_directory+"duude/file/")
+				//extra_button_array
 				menu_list(_array,,menu_text_array,sub_button_array)
 			}
 			else{
-				var _array=folder_finder(working_directory+"duude/file/")
-				var _char= _array[(a_Player_GUI.bodyid)-1]
-				auto_button_text(menu_text_array,320,64,_char,,,,0.7,0.7)
-				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,button_click_array)
+				var _char= (a_Player_GUI.bodyid)-1
+				auto_button_text(menu_text_array,320,64,_array[_char],,,,0.7,0.7)
+				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,extra_button_array)
 			}
 		}break
+
 		case 2:{
 			auto_button_text(menu_text_array,320,64,"Game Modification",,,,0.7,0.7)
 			auto_button_text(menu_text_array,320,126, "Modify Characters?",true,button_click_array,,,,2.2,2.2)
@@ -201,7 +186,9 @@ extra_button_array=[]
 		}break
 		case 4:{
 			auto_button_text(menu_text_array,320,64,"Choosing Comrades",,,,0.7,0.7)
-			character_list_preset(menu4_page,true)
+			var _array=folder_finder(working_directory+"duude/file/")
+			menu_list(_array,,menu_text_array,sub_button_array,true)
+			//character_list_preset(menu4_page,true)
 		}break
 		case 5:{
 			auto_button_text(menu_text_array,320,64,"Customizing Characters",,,,0.7,0.7)
@@ -235,21 +222,21 @@ extra_button_array=[]
 		case 8:{
 			var _array=folder_finder(working_directory+"duude/file/")
 			auto_button_text(menu_text_array,320,64,_array[selected_char-1],,,,0.7,0.7)
-				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
-				//,"","","","Parameters"]
-				menu_list(_animationtype,,menu_text_array,sub_button_array)
-				//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
+
+			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
+			//,"","","","Parameters"]
+			menu_list(_animationtype,,menu_text_array,sub_button_array)
+			//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
 		}break
 		case 9:{
 			var _array=folder_finder(working_directory+"duude/file/")
 			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
 			auto_button_text(menu_text_array,320,42,_array[selected_char-1],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
-			//auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,button_click_array)
-			//auto_button_text(menu_text_array,388, 230,"Change Animation?",true,button_click_array)
 			auto_button_text(menu_text_array,417,273, "<-",true,extra_button_array)
 			auto_button_text(menu_text_array,471,273, "->",true,extra_button_array)
-			auto_button_text(menu_text_array,444,273, page_9)		}break
+			auto_button_text(menu_text_array,444,273, page_9)
+		}break
 		case 9000:{
 			
 		}break
@@ -258,9 +245,81 @@ extra_button_array=[]
 	if truth(menu)!=0{
 		auto_button_text(menu_text_array,177, 273,"  <--  ",true,button_click_array)
 	if !(truth(menu)){
-		auto_button_text(menu_text_array,320,129,"Coming Soon!",,,,0.7,0.7)
+		if menu_code=0{
+			auto_button_text(menu_text_array,320,129,"Coming Soon!",,,,0.7,0.7)
+		}
+		else if menu_code=1{
+			auto_button_text(menu_text_array,320,129,"ETA: in one week, probably",,,,0.7,0.7)
+		}
+		else if menu_code=2{
+			auto_button_text(menu_text_array,320,129,"Coming VERY Soon!",,,,0.7,0.7)
+		}
 	}}
 }
+
+character_list_preset=function(_menu_page,_menu4_check=false){
+	character_list(_menu_page,menu_text_array, sub_button_array, extra_button_array, working_directory+"duude/file/",_menu4_check)
+}
+character_list=function(_menu_page,menu_array,_list_array,_button_array,_directory,_menu4_check=false){
+			var _array=folder_finder(_directory)
+			menu_list(_array,_menu_page,menu_array,_list_array,_menu4_check)
+			//lastpage = ceil((array_length(characters))/5);
+			auto_button_text(menu_array,417,273, "<-",true,_button_array)
+			auto_button_text(menu_array,471,273, "->",true,_button_array)
+			auto_button_text(menu_array,444,273, _menu_page)
+}
+//sprite_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 menu_change=function(_menu){
 	menu=[];

@@ -12,3 +12,4 @@ global.characters = full_import(working_directory+"duude/file/")
 if !(variable_global_exists("selection")) then global.selection[array_length(global.characters)]=false
 selected_action=-1
 edit[0]=false
+menu_code=0
