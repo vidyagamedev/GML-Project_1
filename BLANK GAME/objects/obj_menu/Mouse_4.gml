@@ -26,23 +26,26 @@ switch truth(menu){
 				if !(instance_exists(a_Player_GUI)) {menu_change(0)}
 				else {
 					instance_destroy(a_Player_GUI)
-					menu_script()
+					nav=0;menu_script()
 				}
 			}break
 		}
 		if truth(_returned_sub_array)>=0{
-			var _spawn =truth(_returned_sub_array)+1
-			instance_create_layer(300, 236,"Instances",a_Player_GUI,{
-				sprite_index: global.characters[_spawn-1][2][0],
-				bodyid: _spawn})
-			menu_script()
-			selected_char=_spawn
+			if !(instance_exists(a_Player_GUI)) {
+				var _spawn =truth(_returned_sub_array)+1
+				instance_create_layer(300, 236,"Instances",a_Player_GUI,{
+					sprite_index: global.characters[_spawn-1][2][0],
+					bodyid: _spawn})
+				nav=1;menu_script()
+				selected_char=_spawn
+			}
+			else menu_change(8)
 		}
 		if truth(_returned_extra_array)>=0{
 			if !(instance_exists(a_Player_GUI)) {}
 				//menu1_page=page_buttons(_returned_extra_array,menu1_page)
 				//menu_script()}
-			else menu_change(8)
+			else menu_change(0)
 		}
 		//show_debug_message(selected_char)
 	}break
@@ -55,7 +58,7 @@ switch truth(menu){
 					sprite_index: global.characters[selected_char-1][2][0],
 					bodyid: selected_char})
 				}
-				menu_change(1)
+				nav=1;menu_change(1)
 			}break
 		}
 		var _select =truth(_returned_sub_array)
@@ -75,7 +78,7 @@ switch truth(menu){
 				menu_change(8)
 			}break
 		}
-		if truth(_returned_extra_array)>=0{page_9=page_buttons(_returned_extra_array,page_9)
+		if truth(_returned_sub_array)>=0{page_9=page_buttons(_returned_sub_array,page_9)
 			menu_script()}
 	}break
 

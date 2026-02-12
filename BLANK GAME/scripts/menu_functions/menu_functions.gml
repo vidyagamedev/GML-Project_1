@@ -148,7 +148,8 @@ button_click_array=[]
 sub_button_array=[]
 extra_button_array=[]
 
-auto_button_text(menu_text_array,12,345,"0.2 Preview",true,extra_button_array,fa_left)
+if nav>0{auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)}
+auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 
 	switch truth(menu){
 		case 0:{
@@ -168,7 +169,8 @@ auto_button_text(menu_text_array,12,345,"0.2 Preview",true,extra_button_array,fa
 			else{
 				var _char= (a_Player_GUI.bodyid)-1
 				auto_button_text(menu_text_array,320,64,_array[_char],,,,0.7,0.7)
-				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,extra_button_array)
+				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,sub_button_array)
+				auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
 			}
 		}break
 
@@ -227,15 +229,19 @@ auto_button_text(menu_text_array,12,345,"0.2 Preview",true,extra_button_array,fa
 			//,"","","","Parameters"]
 			menu_list(_animationtype,,menu_text_array,sub_button_array)
 			//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
+			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
+			auto_button_text(menu_text_array,266,345,"- Character Preview",true,extra_button_array,fa_left)
 		}break
 		case 9:{
 			var _array=folder_finder(working_directory+"duude/file/")
 			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
 			auto_button_text(menu_text_array,320,42,_array[selected_char-1],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
-			auto_button_text(menu_text_array,417,273, "<-",true,extra_button_array)
-			auto_button_text(menu_text_array,471,273, "->",true,extra_button_array)
+			auto_button_text(menu_text_array,417,273, "<-",true,sub_button_array)
+			auto_button_text(menu_text_array,471,273, "->",true,sub_button_array)
 			auto_button_text(menu_text_array,444,273, page_9)
+			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
+			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
 		}break
 		case 9000:{
 			
