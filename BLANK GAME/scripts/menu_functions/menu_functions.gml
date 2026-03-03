@@ -141,6 +141,16 @@ sprite_list=function(_p=1){
 		draw_sprite(_current_sprite, i, 178.9 + _a * 69, 123 + _b*63);
 	}
 }
+pages=function(menu_array,_button_array,_menu_page){
+			auto_button_text(menu_array,417,273, "<-",true,_button_array)
+			auto_button_text(menu_array,471,273, "->",true,_button_array)
+			auto_button_text(menu_array,444,273, _menu_page)
+}
+menu_change=function(_menu){
+	menu=[];
+	menu[_menu]=true;
+	menu_script()
+}
 
 menu_script=function(){
 menu_text_array=[]
@@ -229,7 +239,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			//,"","","","Parameters"]
 			menu_list(_animationtype,,menu_text_array,sub_button_array)
 			//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
-			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
+			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)	//see global click event
 			auto_button_text(menu_text_array,266,345,"- Character Preview",true,extra_button_array,fa_left)
 		}break
 		case 9:{
@@ -237,9 +247,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
 			auto_button_text(menu_text_array,320,42,_array[selected_char-1],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
-			auto_button_text(menu_text_array,417,273, "<-",true,sub_button_array)
-			auto_button_text(menu_text_array,471,273, "->",true,sub_button_array)
-			auto_button_text(menu_text_array,444,273, page_9)
+			pages(menu_text_array,sub_button_array,page_9)
 			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
 			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
 		}break
@@ -250,7 +258,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 
 	if truth(menu)!=0{
 		auto_button_text(menu_text_array,177, 273,"  <--  ",true,button_click_array)
-	if !(truth(menu)){
+	if !(truth(menu)){//-1
 		if menu_code=0{
 			auto_button_text(menu_text_array,320,129,"Coming Soon!",,,,0.7,0.7)
 		}
@@ -263,6 +271,8 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 	}}
 }
 
+
+
 character_list_preset=function(_menu_page,_menu4_check=false){
 	character_list(_menu_page,menu_text_array, sub_button_array, extra_button_array, working_directory+"duude/file/",_menu4_check)
 }
@@ -274,63 +284,7 @@ character_list=function(_menu_page,menu_array,_list_array,_button_array,_directo
 			auto_button_text(menu_array,471,273, "->",true,_button_array)
 			auto_button_text(menu_array,444,273, _menu_page)
 }
+
 //sprite_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-menu_change=function(_menu){
-	menu=[];
-	menu[_menu]=true;
-	menu_script()
-}
 
 }

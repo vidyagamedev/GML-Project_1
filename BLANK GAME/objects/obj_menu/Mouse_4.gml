@@ -21,33 +21,27 @@ switch truth(menu){
 		}
 	}break
  	case 1:{
-		switch truth(_returned_array){
-			case 0:{
-				if !(instance_exists(a_Player_GUI)) {menu_change(0)}
-				else {
-					instance_destroy(a_Player_GUI)
-					nav=0;menu_script()
-				}
-			}break
-		}
-		if truth(_returned_sub_array)>=0{
-			if !(instance_exists(a_Player_GUI)) {
+		if !(instance_exists(a_Player_GUI)){
+			switch truth(_returned_array){case 0:menu_change(0)break}
+			if truth(_returned_sub_array)>=0{
 				var _spawn =truth(_returned_sub_array)+1
-				instance_create_layer(300, 236,"Instances",a_Player_GUI,{
-					sprite_index: global.characters[_spawn-1][2][0],
-					bodyid: _spawn})
-				nav=1;menu_script()
+				instance_create_layer(300, 236,"Instances",a_Player_GUI,{bodyid: _spawn,
+					sprite_index: global.characters[_spawn-1][2][0]})
+				nav=1; menu_script()
 				selected_char=_spawn
 			}
-			else menu_change(8)
-		}
-		if truth(_returned_extra_array)>=0{
-			if !(instance_exists(a_Player_GUI)) {}
+			if truth(_returned_extra_array)>=0{
 				//menu1_page=page_buttons(_returned_extra_array,menu1_page)
 				//menu_script()}
-			else menu_change(0)
+			}
 		}
-		//show_debug_message(selected_char)
+		else{
+			switch truth(_returned_array){
+				case 0:{instance_destroy(a_Player_GUI)
+					nav=0;menu_script()}}
+			if truth(_returned_sub_array)>=0{menu_change(8)}
+			//if truth(_returned_extra_array)>=0{menu_change(0)}	see global click event
+		}
 	}break
 	case 8:{
 		switch truth(_returned_array){
@@ -66,8 +60,7 @@ switch truth(menu){
 			selected_action=_select
 			page_9=1
 			menu_change(9)
-				instance_destroy(a_Player_GUI)
-			instance_destroy(obj_gui_sprite)
+			instance_destroy(a_Player_GUI); instance_destroy(obj_gui_sprite)
 			instance_create_layer(300,277,"Instances",obj_gui_sprite,{
 				sprite_index: global.characters[selected_char-1][selected_action+1][0]})
 		}
@@ -85,9 +78,10 @@ switch truth(menu){
 	case 2:{
 		switch truth(_returned_array){
 			case 0:{
-				menu_code=1
-				menu=[];menu_script()
-				//menu_change(3)
+				//menu_code=1
+				//menu=[];menu_script()
+				
+				menu_change(3)
 			}break
 			case 1:{
 				menu_code=2
