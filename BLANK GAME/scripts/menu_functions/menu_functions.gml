@@ -240,7 +240,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			menu_list(_animationtype,,menu_text_array,sub_button_array)
 			//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
 			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)	//see global click event
-			auto_button_text(menu_text_array,266,345,"- Character Preview",true,extra_button_array,fa_left)
+			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
 		}break
 		case 9:{
 			var _array=folder_finder(working_directory+"duude/file/")
@@ -258,17 +258,15 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 
 	if truth(menu)!=0{
 		auto_button_text(menu_text_array,177, 273,"  <--  ",true,button_click_array)
-	if !(truth(menu)){//-1
-		if menu_code=0{
-			auto_button_text(menu_text_array,320,129,"Coming Soon!",,,,0.7,0.7)
+		if !(truth(menu)){//-1
+			if menu_code=0{
+				auto_button_text(menu_text_array,320,129,"Coming Soon!",,,,0.7,0.7)}
+			else if menu_code=1{
+				auto_button_text(menu_text_array,320,129,"ETA: in one week, probably",,,,0.7,0.7)}
+			else if menu_code=2{
+				auto_button_text(menu_text_array,320,129,"Coming VERY Soon!",,,,0.7,0.7)}
 		}
-		else if menu_code=1{
-			auto_button_text(menu_text_array,320,129,"ETA: in one week, probably",,,,0.7,0.7)
-		}
-		else if menu_code=2{
-			auto_button_text(menu_text_array,320,129,"Coming VERY Soon!",,,,0.7,0.7)
-		}
-	}}
+	}
 }
 
 

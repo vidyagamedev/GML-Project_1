@@ -6,9 +6,10 @@ draw_set_valign(fa_middle)
 
 ecks=x
 
-menu=[];menu[0]=true
+//menu=[];menu[0]=true
 nav=0
-menu_script()
+//menu_script()
+menu_change(0)
 global.characters = full_import(working_directory+"duude/file/")
 if !(variable_global_exists("selection")) then global.selection[array_length(global.characters)]=false
 selected_action=-1

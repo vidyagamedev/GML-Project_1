@@ -141,7 +141,6 @@ switch truth(menu){
 		}
 	}break
 	case 6:{
-		show_debug_message(global.characters[selected_char])
 		switch truth(_returned_array){
 			case 0:{
 				if !(instance_exists(a_Player_GUI)){
