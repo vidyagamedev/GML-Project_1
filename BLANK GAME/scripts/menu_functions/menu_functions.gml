@@ -158,7 +158,7 @@ button_click_array=[]
 sub_button_array=[]
 extra_button_array=[]
 
-if nav>0{auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)}
+if nav=true{auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)}
 auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 
 	switch truth(menu){
@@ -234,7 +234,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 		case 8:{
 			var _array=folder_finder(working_directory+"duude/file/")
 			auto_button_text(menu_text_array,320,64,_array[selected_char-1],,,,0.7,0.7)
-
+			
 			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
 			//,"","","","Parameters"]
 			menu_list(_animationtype,,menu_text_array,sub_button_array)

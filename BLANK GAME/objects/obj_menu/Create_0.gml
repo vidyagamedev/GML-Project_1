@@ -7,7 +7,7 @@ draw_set_valign(fa_middle)
 ecks=x
 
 //menu=[];menu[0]=true
-nav=0
+nav=false
 //menu_script()
 menu_change(0)
 global.characters = full_import(working_directory+"duude/file/")
