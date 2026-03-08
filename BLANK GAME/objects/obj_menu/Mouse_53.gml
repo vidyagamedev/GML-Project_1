@@ -8,7 +8,7 @@ switch truth(menu){
 		if (instance_exists(a_Player_GUI)) {
 			if truth(_returned_extra_array)=0{
 				instance_destroy(a_Player_GUI)
-				nav=false;menu_change(0)
+				menu_change(0)
 			}
 		}
 	}break
@@ -17,7 +17,7 @@ switch truth(menu){
 		if _r>=0{
 			instance_destroy(a_Player_GUI)
 			instance_destroy(obj_gui_sprite)
-			nav=false;menu_change(_r)
+			menu_change(_r)
 		}
 	}break
 }

@@ -27,7 +27,7 @@ switch truth(menu){
 				var _spawn =truth(_returned_sub_array)+1
 				instance_create_layer(300, 236,"Instances",a_Player_GUI,{bodyid: _spawn,
 					sprite_index: global.characters[_spawn-1][2][0]})
-				nav=true; menu_script()
+				menu_script()
 				selected_char=_spawn
 			}
 			if truth(_returned_extra_array)>=0{
@@ -38,7 +38,7 @@ switch truth(menu){
 		else{
 			switch truth(_returned_array){
 				case 0:{instance_destroy(a_Player_GUI)
-					nav=false;menu_script()}}
+					menu_script()}}
 			if truth(_returned_sub_array)>=0{menu_change(8)}
 			//if truth(_returned_extra_array)>=0{menu_change(0)}	see global click event
 		}
@@ -80,7 +80,6 @@ switch truth(menu){
 			case 0:{
 				//menu_code=1
 				//menu=[];menu_script()
-				nav=true
 				menu_change(3)
 			}break
 			case 1:{

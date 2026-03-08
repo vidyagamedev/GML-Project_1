@@ -152,13 +152,23 @@ menu_change=function(_menu){
 	menu_script()
 }
 
+navi=function(){
+	//
+	auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)
+	auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
+	switch truth(menu){
+		case 8:case 9:{
+			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
+		}
+	}
+}
+
 menu_script=function(){
 menu_text_array=[]
 button_click_array=[]
 sub_button_array=[]
 extra_button_array=[]
 
-if nav=true{auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)}
 auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 
 	switch truth(menu){
@@ -180,7 +190,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 				var _char= (a_Player_GUI.bodyid)-1
 				auto_button_text(menu_text_array,320,64,_array[_char],,,,0.7,0.7)
 				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,sub_button_array)
-				auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
+				navi()
 			}
 		}break
 
@@ -239,8 +249,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			//,"","","","Parameters"]
 			menu_list(_animationtype,,menu_text_array,sub_button_array)
 			//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
-			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)	//see global click event
-			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
+			navi()
 		}break
 		case 9:{
 			var _array=folder_finder(working_directory+"duude/file/")
@@ -248,8 +257,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			auto_button_text(menu_text_array,320,42,_array[selected_char-1],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
 			pages(menu_text_array,sub_button_array,page_9)
-			auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
-			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
+			navi()
 		}break
 		case 9000:{
 			
