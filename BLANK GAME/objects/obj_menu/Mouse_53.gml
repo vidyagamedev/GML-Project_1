@@ -12,6 +12,14 @@ switch truth(menu){
 			}
 		}
 	}break
+	case 3: case 4: case 5: case 6: case 7 :{
+		switch truth(_returned_extra_array){
+			case 0:
+			instance_destroy(a_Player_GUI)
+			instance_destroy(obj_gui_sprite)
+			menu_change(0);break
+		}
+	}break
 	case 8: case 9: {
 		var _r=truth(_returned_extra_array)
 		if _r>=0{

@@ -157,7 +157,7 @@ navi=function(){
 	auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)
 	auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
 	switch truth(menu){
-		case 8:case 9:{
+		case 8: case 9:{
 			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
 		}
 	}
@@ -205,16 +205,21 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			auto_button_text(menu_text_array,320,126, "Choose Comrades?",true,button_click_array,,,,2.2,2.2)
 			auto_button_text(menu_text_array,320,186, "Customize Characters?",true,button_click_array,,,,2.2,2.2)
 			auto_button_text(menu_text_array,320,246, "Create New Character?",true,button_click_array,,,,2.2,2.2)
+			navi()
 		}break
 		case 4:{
 			auto_button_text(menu_text_array,320,64,"Choosing Comrades",,,,0.7,0.7)
 			var _array=folder_finder(working_directory+"duude/file/")
 			menu_list(_array,,menu_text_array,sub_button_array,true)
 			//character_list_preset(menu4_page,true)
+			navi()
 		}break
 		case 5:{
 			auto_button_text(menu_text_array,320,64,"Customizing Characters",,,,0.7,0.7)
-			character_list_preset(menu5_page)
+			//character_list_preset(menu5_page)
+			var _array=folder_finder(working_directory+"duude/file/")
+			menu_list(_array,,menu_text_array,sub_button_array)
+			navi()
 		}break
 		case 6:{
 			//menu_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
@@ -229,6 +234,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
 				menu_list(_animationtype,,menu_text_array,sub_button_array)
 				auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
+				navi()
 			}
 		}break
 		case 7:{
@@ -240,6 +246,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			//auto_button_text(menu_text_array,320, 230,"Edit Animation?",true,button_click_array)
 			auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,button_click_array)
 			auto_button_text(menu_text_array,388, 230,"Change Animation?",true,button_click_array)
+			navi()
 		}break
 		case 8:{
 			var _array=folder_finder(working_directory+"duude/file/")
