@@ -147,7 +147,12 @@ pages=function(menu_array,_button_array,_menu_page){
 			auto_button_text(menu_array,444,273, _menu_page)
 }
 
-
+re_array=function(){
+	return [
+		auto_array_loop(button_click_array,button_click_check,true),
+		auto_array_loop(sub_button_array,button_click_check,true),
+		auto_array_loop(extra_button_array,button_click_check,true),
+	]}
 menu_change=function(_menu){
 	menu=[];
 	menu[_menu]=true;
