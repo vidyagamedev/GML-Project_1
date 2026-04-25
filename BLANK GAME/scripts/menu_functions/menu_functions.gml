@@ -146,21 +146,12 @@ pages=function(menu_array,_button_array,_menu_page){
 			auto_button_text(menu_array,471,273, "->",true,_button_array)
 			auto_button_text(menu_array,444,273, _menu_page)
 }
+
+
 menu_change=function(_menu){
 	menu=[];
 	menu[_menu]=true;
 	menu_script()
-}
-
-navi=function(){
-	//
-	auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)
-	auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
-	switch truth(menu){
-		case 8: case 9:{
-			auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
-		}
-	}
 }
 
 menu_script=function(){
@@ -283,7 +274,16 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 		}
 	}
 }
-
+	navi=function(){
+		//
+		auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)
+		auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
+		switch truth(menu){
+			case 8: case 9:{
+				auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
+			}
+		}
+	}
 
 
 character_list_preset=function(_menu_page,_menu4_check=false){
