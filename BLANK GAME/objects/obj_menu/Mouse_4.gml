@@ -5,7 +5,7 @@ var _returned_array=_arr[0], _returned_sub_array = _arr[1], _returned_extra_arra
 var _array_struct = ren_array();
 switch truth(menu){
 	case 0:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				instance_create_layer(-100, 500, "Instances_staging", spawn)
 				instance_destroy()

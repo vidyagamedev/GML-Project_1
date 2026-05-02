@@ -179,9 +179,9 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 	switch truth(menu){
 		case 0:{
 			auto_button_text(menu_text_array,320,64,"Welcome",,,,0.7,0.7)
-			auto_button_text(menu_text_array,320,126, "Play game?",true,button_click_array,,,,2.2,2.2)
-			auto_button_text(menu_text_array,320,186, "Preview Characters?",true,button_click_array,,,,2.2,2.2)
-			auto_button_text(menu_text_array,320,246, "Modify Game?",true,button_click_array,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,126, "Play game?",true,menu_buttons,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,186, "Preview Characters?",true,menu_buttons,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,246, "Modify Game?",true,menu_buttons,,,,2.2,2.2)
 		}break
 		case 1:{
 			var _array=folder_finder(working_directory+"duude/file/")
