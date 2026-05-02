@@ -2,7 +2,7 @@
 // You can write your code in this editor
 var _arr = re_array();
 var _returned_array=_arr[0], _returned_sub_array = _arr[1], _returned_extra_array = _arr[2]
-
+var _array_struct = ren_array();
 switch truth(menu){
 	case 0:{
 		switch truth(_returned_array){

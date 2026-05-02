@@ -154,10 +154,11 @@ re_array=function(){
 		auto_array_loop(extra_button_array,button_click_check,true),
 	]}
 ren_array=function(){
-	return [
-		auto_array_loop(new_array,button_click_check,true),
-		auto_array_loop(new_array2,button_click_check,true)		
-	]}
+	return {
+		returned_button_array : auto_array_loop(menu_buttons,button_click_check,true),
+		returned_first_array : auto_array_loop(new_array,button_click_check,true),
+		returned_extra_array : auto_array_loop(new_array2,button_click_check,true)		
+	}}
 menu_change=function(_menu){
 	menu=[];
 	menu[_menu]=true;
@@ -165,6 +166,7 @@ menu_change=function(_menu){
 }
 
 menu_script=function(){
+menu_buttons=[]
 new_array=[]
 new_array2=[]
 menu_text_array=[]
