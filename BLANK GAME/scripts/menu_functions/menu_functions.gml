@@ -156,10 +156,10 @@ re_array=function(){
 ren_array=function(){
 	return {
 		returned_button_array : auto_array_loop(menu_buttons,button_click_check,true),
-		returned_nav_array : auto_array_loop(nav_buttons,button_click_check,true),
+		//returned_nav_array : auto_array_loop(nav_buttons,button_click_check,true),
+		returned_list_array : auto_array_loop(list_buttons,button_click_check,true),
 		
 		returned_first_array : auto_array_loop(new_array,button_click_check,true),
-		returned_extra_array : auto_array_loop(new_array2,button_click_check,true)		
 	}}
 menu_change=function(_menu){
 	menu=[];
@@ -169,9 +169,10 @@ menu_change=function(_menu){
 
 menu_script=function(){
 menu_buttons=[]
-nav_buttons=[]
+//nav_buttons=[]
+list_buttons=[]
+
 new_array=[]
-new_array2=[]
 menu_text_array=[]
 button_click_array=[]
 sub_button_array=[]

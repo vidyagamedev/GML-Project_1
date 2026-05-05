@@ -21,7 +21,7 @@ switch truth(menu){
 	}break
  	case 1:{
 		if !(instance_exists(a_Player_GUI)){
-			switch truth(_returned_array){case 0:menu_change(0)break}
+			switch truth(_array_struct.returned_button_array){case 0:menu_change(0)break}
 			if truth(_returned_sub_array)>=0{
 				var _spawn =truth(_returned_sub_array)+1
 				instance_create_layer(300, 236,"Instances",a_Player_GUI,{bodyid: _spawn,
