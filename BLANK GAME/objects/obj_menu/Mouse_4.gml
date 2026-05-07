@@ -133,12 +133,12 @@ switch truth(menu){
 		}
 	}break
 	case 5:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				menu_change(3)
 			}break
 		}
-		var _select =truth(_returned_sub_array)
+		var _select =truth(_array_struct.returned_list_array)
 		if _select >=0{
 			selected_char=_select
 			menu_change(6)

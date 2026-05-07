@@ -230,7 +230,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			auto_button_text(menu_text_array,320,64,"Customizing Characters",,,,0.7,0.7)
 			//character_list_preset(menu5_page)
 			var _array=folder_finder(working_directory+"duude/file/")
-			menu_list(_array,,menu_text_array,sub_button_array)
+			menu_list(_array,,menu_text_array,list_buttons)
 			navi()
 		}break
 		case 6:{
