@@ -118,13 +118,14 @@ switch truth(menu){
 		}
 	}break
 	case 4:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				menu_change(3)
 			}break
 		}
-		if truth(_returned_sub_array)>=0{
-			var _select =truth(_returned_sub_array) +1
+		var _arry = _array_struct.returned_list_array
+		if truth(_arry)>=0{
+			var _select =truth(_arry) +1
 			global.selection[_select]=!(global.selection[_select])
 			menu_script()
 		}

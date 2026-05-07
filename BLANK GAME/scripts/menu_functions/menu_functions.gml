@@ -222,7 +222,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 		case 4:{
 			auto_button_text(menu_text_array,320,64,"Choosing Comrades",,,,0.7,0.7)
 			var _array=folder_finder(working_directory+"duude/file/")
-			menu_list(_array,,menu_text_array,sub_button_array,true)
+			menu_list(_array,,menu_text_array,list_buttons,true)
 			//character_list_preset(menu4_page,true)
 			navi()
 		}break
