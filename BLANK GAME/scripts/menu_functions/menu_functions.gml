@@ -158,7 +158,7 @@ re_array=function(){
 ren_array=function(){
 	return {
 		returned_button_array : auto_array_loop(menu_buttons,button_click_check,true),
-		//returned_nav_array : auto_array_loop(nav_buttons,button_click_check,true),
+		returned_nav_array : auto_array_loop(nav_buttons,button_click_check,true),
 		returned_list_array : auto_array_loop(list_buttons,button_click_check,true),
 		
 		returned_first_array : auto_array_loop(new_array,button_click_check,true),
@@ -172,7 +172,7 @@ menu_change=function(_menu){
 menu_script=function(){
 #region
 menu_buttons=[]
-//nav_buttons=[]
+nav_buttons=[]
 list_buttons=[]
 
 new_array=[]
@@ -244,8 +244,8 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			}
 			else{
 				var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox","","","","Parameters"]
-				menu_list(_animationtype,,menu_text_array,sub_button_array)
-				auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
+				menu_list(_animationtype,,menu_text_array,list_buttons)
+				auto_button_text(menu_text_array,369, 273,"Preview",true,menu_buttons)
 				navi()
 			}
 		}break
@@ -256,8 +256,8 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			auto_button_text(menu_text_array,320,42,_array[selected_char],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
 			//auto_button_text(menu_text_array,320, 230,"Edit Animation?",true,button_click_array)
-			auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,button_click_array)
-			auto_button_text(menu_text_array,388, 230,"Change Animation?",true,button_click_array)
+			auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,menu_buttons)
+			auto_button_text(menu_text_array,388, 230,"Change Animation?",true,menu_buttons)
 			navi()
 		}break
 		case 8:{
@@ -284,7 +284,6 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 	}
 
 	if truth(menu)!=0{
-		auto_button_text(menu_text_array,177, 273,"  <--  ",true,button_click_array)
 		auto_button_text(menu_text_array,177, 273,"  <--  ",true,menu_buttons)
 		if !(truth(menu)){//-1
 			if menu_code=0{
@@ -299,10 +298,10 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 	navi=function(){
 		//
 		auto_button_text(menu_text_array,12,345," Navigation Shortcuts:",true,,fa_left)
-		auto_button_text(menu_text_array,177,345," Main Menu",true,extra_button_array,fa_left)
+		auto_button_text(menu_text_array,177,345," Main Menu",true,nav_buttons,fa_left)
 		switch truth(menu){
 			case 8: case 9:{
-				auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,extra_button_array,fa_left)
+				auto_button_text(menu_text_array,266.6,345,"- Character Preview",true,nav_buttons,fa_left)
 			}
 		}
 	}

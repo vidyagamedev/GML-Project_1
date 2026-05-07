@@ -2,18 +2,18 @@
 // You can write your code in this editor
 
 
-var _returned_extra_array	= auto_array_loop(extra_button_array,button_click_check,true)
+var _array_struct = ren_array();
 switch truth(menu){
 	case 1:{
 		if (instance_exists(a_Player_GUI)) {
-			if truth(_returned_extra_array)=0{
+			if truth(_array_struct.returned_nav_array)=0{
 				instance_destroy(a_Player_GUI)
 				menu_change(0)
 			}
 		}
 	}break
 	case 3: case 4: case 5: case 6: case 7 :{
-		switch truth(_returned_extra_array){
+		switch truth(_array_struct.returned_nav_array){
 			case 0:
 			instance_destroy(a_Player_GUI)
 			instance_destroy(obj_gui_sprite)
@@ -21,7 +21,7 @@ switch truth(menu){
 		}
 	}break
 	case 8: case 9: {
-		var _r=truth(_returned_extra_array)
+		var _r=truth(_array_struct.returned_nav_array)
 		if _r>=0{
 			instance_destroy(a_Player_GUI)
 			instance_destroy(obj_gui_sprite)

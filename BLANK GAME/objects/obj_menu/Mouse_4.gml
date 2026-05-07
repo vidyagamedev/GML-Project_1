@@ -146,7 +146,7 @@ switch truth(menu){
 		}
 	}break
 	case 6:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				if !(instance_exists(a_Player_GUI)){
 					instance_create_layer(269, 236,"Instances",a_Player_GUI,{
@@ -167,7 +167,7 @@ switch truth(menu){
 				instance_destroy(obj_gui_sprite)
 			}break
 		}
-		var _select =truth(_returned_sub_array)
+		var _select =truth(_array_struct.returned_list_array)
 		if _select >=0&&_select <6{
 			selected_action=_select
 			show_debug_message(selected_action)
@@ -183,7 +183,7 @@ switch truth(menu){
 		}
 	}break
 	case 7:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				
 			}break
