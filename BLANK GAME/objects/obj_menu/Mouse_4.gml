@@ -81,7 +81,7 @@ switch truth(menu){
 	}break
 
 	case 2:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				//menu_code=1
 				//menu=[];menu_script()
@@ -101,7 +101,7 @@ switch truth(menu){
 		}
 	}break
 	case 3:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				menu4_page=1
 				menu_change(4)

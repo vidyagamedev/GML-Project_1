@@ -208,15 +208,15 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 
 		case 2:{
 			auto_button_text(menu_text_array,320,64,"Game Modification",,,,0.7,0.7)
-			auto_button_text(menu_text_array,320,126, "Modify Characters?",true,button_click_array,,,,2.2,2.2)
-			auto_button_text(menu_text_array,320,186, "Modify Background?",true,button_click_array,,,,2.2,2.2)
-			auto_button_text(menu_text_array,320,246, "Modify Level?",true,button_click_array,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,126, "Modify Characters?",true,menu_buttons,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,186, "Modify Background?",true,menu_buttons,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,246, "Modify Level?",true,menu_buttons,,,,2.2,2.2)
 		}break
 		case 3:{
 			auto_button_text(menu_text_array,320,64,"Character Modification",,,,0.7,0.7)
-			auto_button_text(menu_text_array,320,126, "Choose Comrades?",true,button_click_array,,,,2.2,2.2)
-			auto_button_text(menu_text_array,320,186, "Customize Characters?",true,button_click_array,,,,2.2,2.2)
-			auto_button_text(menu_text_array,320,246, "Create New Character?",true,button_click_array,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,126, "Choose Comrades?",true,menu_buttons,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,186, "Customize Characters?",true,menu_buttons,,,,2.2,2.2)
+			auto_button_text(menu_text_array,320,246, "Create New Character?",true,menu_buttons,,,,2.2,2.2)
 			navi()
 		}break
 		case 4:{
