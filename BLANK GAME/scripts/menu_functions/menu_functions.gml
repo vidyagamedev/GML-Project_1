@@ -266,7 +266,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			
 			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
 			//,"","","","Parameters"]
-			menu_list(_animationtype,,menu_text_array,sub_button_array)
+			menu_list(_animationtype,,menu_text_array,list_buttons)
 			//auto_button_text(menu_text_array,369, 273,"Preview",true,button_click_array)
 			navi()
 		}break
