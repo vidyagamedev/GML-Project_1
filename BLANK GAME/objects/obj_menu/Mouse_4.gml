@@ -11,7 +11,7 @@ switch truth(menu){
 				instance_destroy()
 			}break
 			case 1:{
-				//menu1_page=1
+				page_1=1
 				menu_change(1)
 			}break
 			case 2:{
@@ -29,10 +29,9 @@ switch truth(menu){
 				menu_script()
 				selected_char=_spawn
 			}
-			if truth(_returned_extra_array)>=0{
-				//menu1_page=page_buttons(_returned_extra_array,menu1_page)
-				//menu_script()}
-			}
+			var _arry = _array_struct.returned_pages_array
+			if truth(_arry)>=0{page_1=page_button_code(_arry,page_1)
+				menu_script()}
 		}
 		else{
 			switch truth(_array_struct.returned_button_array){
@@ -43,8 +42,6 @@ switch truth(menu){
 					menu_script()
 				}break
 			}
-			//if truth(_returned_sub_array)>=0{menu_change(8)}
-			//if truth(_returned_extra_array)>=0{menu_change(0)}	see global click event
 		}
 	}break
 	case 8:{
@@ -75,8 +72,8 @@ switch truth(menu){
 				menu_change(8)
 			}break
 		}
-		var _arry = _array_struct.returned_list_array
-		if truth(_arry)>=0{page_9=page_buttons(_arry,page_9)
+		var _arry = _array_struct.returned_pages_array
+		if truth(_arry)>=0{page_9=page_button_code(_arry,page_9)
 			menu_script()}
 	}break
 
@@ -103,11 +100,11 @@ switch truth(menu){
 	case 3:{
 		switch truth(_array_struct.returned_button_array){
 			case 0:{
-				menu4_page=1
+				page_4=1
 				menu_change(4)
 			}break
 			case 1:{
-				menu5_page=1
+				page_5=1
 				menu_change(5)
 			}break
 			case 2:{
@@ -129,9 +126,9 @@ switch truth(menu){
 			global.selection[_select]=!(global.selection[_select])
 			menu_script()
 		}
-		if truth(_returned_extra_array)>=0{
-			//menu4_page=page_buttons(_returned_extra_array,menu4_page)
-		}
+		var _arry = _array_struct.returned_pages_array
+		if truth(_arry)>=0{page_4=page_button_code(_arry,page_4)
+			menu_script()}
 	}break
 	case 5:{
 		switch truth(_array_struct.returned_button_array){
@@ -144,6 +141,9 @@ switch truth(menu){
 			selected_char=_select
 			menu_change(6)
 		}
+		var _arry = _array_struct.returned_pages_array
+		if truth(_arry)>=0{page_5=page_button_code(_arry,page_5)
+			menu_script()}
 	}break
 	case 6:{
 		switch truth(_array_struct.returned_button_array){
@@ -171,6 +171,7 @@ switch truth(menu){
 		if _select >=0&&_select <6{
 			selected_action=_select
 			show_debug_message(selected_action)
+			page_7=1
 			menu_change(7)
 			//current_sprite=global.characters[selected_char][selected_action+1][0]
 			//giant_array_for_character[_posit][5]
@@ -179,7 +180,6 @@ switch truth(menu){
 			instance_destroy(obj_gui_sprite)
 			instance_create_layer(300,277,"Instances",obj_gui_sprite,
 			{sprite_index: global.characters[selected_char][selected_action+1][0]})
-
 		}
 	}break
 	case 7:{
@@ -194,10 +194,13 @@ switch truth(menu){
 				menu_change(6)
 			}break
 		}
+		var _arry = _array_struct.returned_pages_array
+		if truth(_arry)>=0{page_7=page_button_code(_arry,page_7)
+			menu_script()}
 	}break
 
 	case -1:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				menu_change(2)
 			}break

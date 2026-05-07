@@ -119,7 +119,7 @@ comrades_check=function(_text_array,i,_a,_b){
 		var _check = global.selection[i+1] ? "  X"  : "-./"
 		auto_button_text(_text_array,303+_a, 123+(i-_b)*29, _check , , , , , , 1.2 )
 }
-page_buttons=function(_button_array,_menu_page){
+page_button_code=function(_button_array,_menu_page){
 		switch truth(_button_array){
 			case 0:{
 				if _menu_page!=1{_menu_page-=1}
@@ -160,8 +160,7 @@ ren_array=function(){
 		returned_button_array : auto_array_loop(menu_buttons,button_click_check,true),
 		returned_nav_array : auto_array_loop(nav_buttons,button_click_check,true),
 		returned_list_array : auto_array_loop(list_buttons,button_click_check,true),
-		
-		returned_first_array : auto_array_loop(new_array,button_click_check,true),
+		returned_pages_array : auto_array_loop(page_buttons,button_click_check,true),
 	}}
 menu_change=function(_menu){
 	menu=[];
@@ -174,8 +173,7 @@ menu_script=function(){
 menu_buttons=[]
 nav_buttons=[]
 list_buttons=[]
-
-new_array=[]
+page_buttons=[]
 menu_text_array=[]
 button_click_array=[]
 sub_button_array=[]
@@ -194,9 +192,8 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			var _array=folder_finder(working_directory+"duude/file/")
 			if !(instance_exists(a_Player_GUI)){
 				auto_button_text(menu_text_array,320,64,"Character Preview",,,,0.7,0.7)
-				//character_list_preset(menu1_page)
-				//extra_button_array
-				menu_list(_array,,menu_text_array,list_buttons)
+				menu_list(_array,page_1,menu_text_array,list_buttons)
+				pages(menu_text_array,page_buttons,page_1)
 			}
 			else{
 				var _char= (a_Player_GUI.bodyid)-1
@@ -222,15 +219,15 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 		case 4:{
 			auto_button_text(menu_text_array,320,64,"Choosing Comrades",,,,0.7,0.7)
 			var _array=folder_finder(working_directory+"duude/file/")
-			menu_list(_array,,menu_text_array,list_buttons,true)
-			//character_list_preset(menu4_page,true)
+			menu_list(_array,page_4,menu_text_array,list_buttons,true)
+			pages(menu_text_array,page_buttons,page_4)
 			navi()
 		}break
 		case 5:{
 			auto_button_text(menu_text_array,320,64,"Customizing Characters",,,,0.7,0.7)
-			//character_list_preset(menu5_page)
+			pages(menu_text_array,page_buttons,page_5)
 			var _array=folder_finder(working_directory+"duude/file/")
-			menu_list(_array,,menu_text_array,list_buttons)
+			menu_list(_array,page_5,menu_text_array,list_buttons)
 			navi()
 		}break
 		case 6:{
@@ -258,6 +255,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			//auto_button_text(menu_text_array,320, 230,"Edit Animation?",true,button_click_array)
 			auto_button_text(menu_text_array,234, 230,"Adjust Positioning",true,menu_buttons)
 			auto_button_text(menu_text_array,388, 230,"Change Animation?",true,menu_buttons)
+			pages(menu_text_array,page_buttons,page_7)
 			navi()
 		}break
 		case 8:{
@@ -275,7 +273,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
 			auto_button_text(menu_text_array,320,42,_array[selected_char-1],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
-			pages(menu_text_array,list_buttons,page_9)
+			pages(menu_text_array,page_buttons,page_9)
 			navi()
 		}break
 		case 9000:{
@@ -318,7 +316,4 @@ character_list=function(_menu_page,menu_array,_list_array,_button_array,_directo
 			auto_button_text(menu_array,471,273, "->",true,_button_array)
 			auto_button_text(menu_array,444,273, _menu_page)
 }
-
-//sprite_list=function(_array,_p=1,_text_array,_button_array,_menu4_check=false){
-
 }
