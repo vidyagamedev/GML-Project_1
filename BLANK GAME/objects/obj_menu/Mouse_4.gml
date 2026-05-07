@@ -22,8 +22,8 @@ switch truth(menu){
  	case 1:{
 		if !(instance_exists(a_Player_GUI)){
 			switch truth(_array_struct.returned_button_array){case 0:menu_change(0)break}
-			if truth(_returned_sub_array)>=0{
-				var _spawn =truth(_returned_sub_array)+1
+			if truth(_array_struct.returned_list_array)>=0{
+				var _spawn =truth(_array_struct.returned_list_array)+1
 				instance_create_layer(300, 236,"Instances",a_Player_GUI,{bodyid: _spawn,
 					sprite_index: global.characters[_spawn-1][2][0]})
 				menu_script()
@@ -35,10 +35,15 @@ switch truth(menu){
 			}
 		}
 		else{
-			switch truth(_returned_array){
-				case 0:{instance_destroy(a_Player_GUI)
-					menu_script()}}
-			if truth(_returned_sub_array)>=0{menu_change(8)}
+			switch truth(_array_struct.returned_button_array){
+				case 0: {
+					menu_change(8)
+				}break
+				case 1:{instance_destroy(a_Player_GUI)
+					menu_script()
+				}break
+			}
+			//if truth(_returned_sub_array)>=0{menu_change(8)}
 			//if truth(_returned_extra_array)>=0{menu_change(0)}	see global click event
 		}
 	}break

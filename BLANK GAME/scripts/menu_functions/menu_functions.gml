@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function menu_functions(){
 
+#region
 #region auto_button_text:	epic button creator
 /// @description	pushes button info to: menu_text_array, button_click_array
 /// @function		auto_button_text(_text_array,_x,_y,_text,_clicky,_button_array,_halign,_xscale,_yscale,_angle,_device)
@@ -146,6 +147,7 @@ pages=function(menu_array,_button_array,_menu_page){
 			auto_button_text(menu_array,471,273, "->",true,_button_array)
 			auto_button_text(menu_array,444,273, _menu_page)
 }
+#endregion
 
 re_array=function(){
 	return [
@@ -168,6 +170,7 @@ menu_change=function(_menu){
 }
 
 menu_script=function(){
+#region
 menu_buttons=[]
 //nav_buttons=[]
 list_buttons=[]
@@ -177,7 +180,7 @@ menu_text_array=[]
 button_click_array=[]
 sub_button_array=[]
 extra_button_array=[]
-
+#endregion
 auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 
 	switch truth(menu){
@@ -193,12 +196,12 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 				auto_button_text(menu_text_array,320,64,"Character Preview",,,,0.7,0.7)
 				//character_list_preset(menu1_page)
 				//extra_button_array
-				menu_list(_array,,menu_text_array,sub_button_array)
+				menu_list(_array,,menu_text_array,list_buttons)
 			}
 			else{
 				var _char= (a_Player_GUI.bodyid)-1
 				auto_button_text(menu_text_array,320,64,_array[_char],,,,0.7,0.7)
-				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,sub_button_array)
+				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,menu_buttons)
 				navi()
 			}
 		}break
