@@ -275,7 +275,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			var _animationtype=["Attacking","Falling","Standing","Jumping","Moving","Attack Hitbox"]
 			auto_button_text(menu_text_array,320,42,_array[selected_char-1],,,,0.369,0.369)
 			auto_button_text(menu_text_array,320,69,_animationtype[selected_action],,,,0.7,0.7)
-			pages(menu_text_array,sub_button_array,page_9)
+			pages(menu_text_array,list_buttons,page_9)
 			navi()
 		}break
 		case 9000:{

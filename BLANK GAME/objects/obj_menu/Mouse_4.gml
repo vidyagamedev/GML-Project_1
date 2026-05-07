@@ -70,12 +70,13 @@ switch truth(menu){
 		}
 	}break
 	case 9:{
-		switch truth(_returned_array){
+		switch truth(_array_struct.returned_button_array){
 			case 0:{
 				menu_change(8)
 			}break
 		}
-		if truth(_returned_sub_array)>=0{page_9=page_buttons(_returned_sub_array,page_9)
+		var _arry = _array_struct.returned_list_array
+		if truth(_arry)>=0{page_9=page_buttons(_arry,page_9)
 			menu_script()}
 	}break
 
