@@ -194,6 +194,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 				auto_button_text(menu_text_array,320,64,"Character Preview",,,,0.7,0.7)
 				menu_list(_array,page_1,menu_text_array,list_buttons)
 				pages(menu_text_array,page_buttons,page_1)
+				auto_button_text(menu_text_array,300, 273,"Choose Comrades?",true,menu_buttons)
 			}
 			else{
 				var _char= (a_Player_GUI.bodyid)-1
@@ -222,6 +223,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 			menu_list(_array,page_4,menu_text_array,list_buttons,true)
 			pages(menu_text_array,page_buttons,page_4)
 			navi()
+			auto_button_text(menu_text_array,300, 273,"Preview Character?",true,menu_buttons)
 		}break
 		case 5:{
 			auto_button_text(menu_text_array,320,64,"Customizing Characters",,,,0.7,0.7)

@@ -21,7 +21,13 @@ switch truth(menu){
 	}break
  	case 1:{
 		if !(instance_exists(a_Player_GUI)){
-			switch truth(_array_struct.returned_button_array){case 0:menu_change(0)break}
+			switch truth(_array_struct.returned_button_array){
+				case 0:
+				page_4=1
+				menu_change(4)
+				break
+				case 1:menu_change(0)break
+			}
 			if truth(_array_struct.returned_list_array)>=0{
 				var _spawn =truth(_array_struct.returned_list_array)+1
 				instance_create_layer(300, 236,"Instances",a_Player_GUI,{bodyid: _spawn,
@@ -119,6 +125,10 @@ switch truth(menu){
 	case 4:{
 		switch truth(_array_struct.returned_button_array){
 			case 0:{
+				page_1=1
+				menu_change(1)
+			}break
+			case 1:{
 				menu_change(3)
 			}break
 		}
@@ -210,7 +220,7 @@ switch truth(menu){
 	case -1:{
 		switch truth(_array_struct.returned_button_array){
 			case 0:{
-				if menu_code =1 || menu_code =2 {
+				if menu_code =0 || menu_code =2 {
 					menu_change(2)
 				}
 				else if menu_code =3{
