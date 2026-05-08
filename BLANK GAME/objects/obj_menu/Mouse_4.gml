@@ -7,6 +7,7 @@ switch truth(menu){
 	case 0:{
 		switch truth(_array_struct.returned_button_array){
 			case 0:{
+				global.mainplayer=0
 				instance_create_layer(-100, 500, "Instances_staging", spawn)
 				instance_destroy()
 			}break
@@ -44,7 +45,13 @@ switch truth(menu){
 				case 0: {
 					menu_change(8)
 				}break
-				case 1:{instance_destroy(a_Player_GUI)
+				case 1: {
+					global.mainplayer=selected_char
+					instance_create_layer(-100, 500, "Instances_staging", spawn)
+					instance_destroy(a_Player_GUI)
+					instance_destroy()
+				}break
+				case 2:{instance_destroy(a_Player_GUI)
 					menu_script()
 				}break
 			}

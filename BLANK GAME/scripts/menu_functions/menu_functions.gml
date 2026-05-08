@@ -200,6 +200,7 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 				var _char= (a_Player_GUI.bodyid)-1
 				auto_button_text(menu_text_array,320,64,_array[_char],,,,0.7,0.7)
 				auto_button_text(menu_text_array,320,100,"View Animations and Graphics?",true,menu_buttons)
+				auto_button_text(menu_text_array,320,142,"Start Playing?",true,menu_buttons)
 				navi()
 			}
 		}break

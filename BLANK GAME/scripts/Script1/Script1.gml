@@ -76,7 +76,11 @@ function full_import(_directory){
 function spawnplayer (){
 	dudes = array_length(global.characters)
 	//randomise();//true random
-	var rndmi =irandom_range(1, dudes);
+	var rndmi
+	if global.mainplayer=0{
+		rndmi =irandom_range(1, dudes);
+		global.mainplayer = rndmi}
+	else{rndmi=global.mainplayer}
 	//if rndmi >= 1 && rndmi <= dudes {
 		instance_create_layer(-5, 490,"Instances",a_Player,
 		{sprite_index: global.characters[rndmi-1][2][0],
@@ -89,5 +93,4 @@ function spawnplayer (){
 				bodyid:_i})
 		}
 	}
-	global.mainplayer = rndmi
 }
