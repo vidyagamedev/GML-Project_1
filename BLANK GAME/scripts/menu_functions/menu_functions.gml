@@ -292,6 +292,30 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 				auto_button_text(menu_text_array,320,129,"Coming VERY Soon!",,,,0.7,0.7)}
 			else if menu_code=3||menu_code=4{
 				auto_button_text(menu_text_array,320,129,"Available in full version!",,,,0.7,0.7)}
+			else if menu_code=5{
+				auto_button_text(menu_text_array,320,55,"Parameters",,,,0.7,0.7)
+				
+				auto_button_text(menu_text_array,210,91, "jumpframe")
+				auto_button_text(menu_text_array,377,91, "The frame when feet...")
+
+				auto_button_text(menu_text_array,210,117, "jumpspeed")
+				auto_button_text(menu_text_array,388,117, "The speed for how fast to...")
+
+				auto_button_text(menu_text_array,210,143, "walkstep2")
+				auto_button_text(menu_text_array,377,143, "The frame to make footsteps...")
+
+				auto_button_text(menu_text_array,210,169, "jumpframe0")
+				auto_button_text(menu_text_array,377,169, "The frame to move up slowly...")
+
+				auto_button_text(menu_text_array,210,195, "LandY")
+				auto_button_text(menu_text_array,363,195, "(landing at y coordinate) Where...")
+
+				auto_button_text(menu_text_array,210,221, "fllspd")
+				auto_button_text(menu_text_array,377,221, "(fall speed) How fast to...")
+
+				auto_button_text(menu_text_array,210,247, "myd")
+				auto_button_text(menu_text_array,363,247, "(my distance) The distance from...")
+			}
 		}
 	}
 }

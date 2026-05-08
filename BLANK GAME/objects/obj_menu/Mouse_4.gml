@@ -183,6 +183,10 @@ switch truth(menu){
 			instance_create_layer(300,277,"Instances",obj_gui_sprite,
 			{sprite_index: global.characters[selected_char][selected_action+1][0]})
 		}
+		else if _select=9{
+			menu_code=5
+			menu=[];menu_script()
+		}
 	}break
 	case 7:{
 		switch truth(_array_struct.returned_button_array){
@@ -206,7 +210,7 @@ switch truth(menu){
 	case -1:{
 		switch truth(_array_struct.returned_button_array){
 			case 0:{
-				if menu_code !=3 && menu_code !=4 {
+				if menu_code =1 || menu_code =2 {
 					menu_change(2)
 				}
 				else if menu_code =3{
@@ -214,6 +218,9 @@ switch truth(menu){
 				}
 				else if menu_code =4{
 					menu_change(3)
+				}
+				else if menu_code =5{
+					menu_change(6)
 				}
 			}break
 		}
