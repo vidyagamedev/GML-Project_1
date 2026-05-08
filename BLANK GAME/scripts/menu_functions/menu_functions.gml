@@ -290,6 +290,8 @@ auto_button_text(menu_text_array,628,345,"0.2 Preview",true,,fa_right)
 				auto_button_text(menu_text_array,320,129,"ETA: in one week, probably",,,,0.7,0.7)}
 			else if menu_code=2{
 				auto_button_text(menu_text_array,320,129,"Coming VERY Soon!",,,,0.7,0.7)}
+			else if menu_code=3{
+				auto_button_text(menu_text_array,320,129,"Available in full version!",,,,0.7,0.7)}
 		}
 	}
 }

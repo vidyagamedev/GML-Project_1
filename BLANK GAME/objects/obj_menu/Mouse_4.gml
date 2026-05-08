@@ -185,10 +185,12 @@ switch truth(menu){
 	case 7:{
 		switch truth(_array_struct.returned_button_array){
 			case 0:{
-				
+				menu_code=3
+				menu=[];menu_script()
 			}break
 			case 1:{
-				
+				menu_code=3
+				menu=[];menu_script()
 			}break
 			case 2:{
 				menu_change(6)
@@ -202,7 +204,12 @@ switch truth(menu){
 	case -1:{
 		switch truth(_array_struct.returned_button_array){
 			case 0:{
-				menu_change(2)
+				if menu_code !=3{
+					menu_change(2)
+				}
+				else{
+					menu_change(7)
+				}
 			}break
 		}
 	}break
